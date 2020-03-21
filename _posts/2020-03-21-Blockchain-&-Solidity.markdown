@@ -27,8 +27,7 @@ Smart Contract Dapp 에 들어가기 앞서 인프런에 있는 [블록체인과
 
 Remix : <http://remix.ethereum.org/>
 
-<pre>
-<code>
+```solidity
 pragma solidity 0.4.24;
 
 contract vote{
@@ -99,8 +98,7 @@ contract vote{
     }
 }
 
-</code>
-</pre>
+```
 
 
 
