@@ -1,5 +1,5 @@
 remote_theme: thelehhman/plainwhite-jekyll
-title: Your awesome title
+title: zzihyun's Portfolio
 author: zzihyun
 email: jhhhj1002@hanmail.net
 description: > # this means to ignore newlines until "show_exerpts:"
@@ -14,7 +14,7 @@ sass:
   sass_dir: _sass
 plainwhite:
   name: zzihyun
-  tagline: Developer. Designer
+  tagline: Developer
   date_format: "%b %-d, %Y"
   sitemap: true # set to true to generate sitemap.xml content
 
