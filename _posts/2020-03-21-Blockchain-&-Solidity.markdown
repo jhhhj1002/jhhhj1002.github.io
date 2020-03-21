@@ -23,7 +23,7 @@ Smart Contract Dapp 에 들어가기 앞서 인프런에 있는 [블록체인과
 
 * * *
 
-**라이브코딩으로 블록체인 투표앱 만들기**
+__라이브코딩으로 블록체인 투표앱 만들기__
 
 Remix : <http://remix.ethereum.org/>
 
