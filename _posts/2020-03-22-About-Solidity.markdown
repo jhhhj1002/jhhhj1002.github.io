@@ -5,6 +5,7 @@ date:   2020-03-22 21:03:36 +0530
 categories: Solidity 
 ---
 
+|Title|Explanation|
 |:---:|:---:|
 |msg.sender|메세지를 보낸 주소|
 |msg.value|메세지를 보낸 값|
