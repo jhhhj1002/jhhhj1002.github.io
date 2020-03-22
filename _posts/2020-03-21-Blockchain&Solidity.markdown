@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[강의수강] 블록체인과 솔리디티"
+title:  "[강의 수강] 블록체인과 솔리디티"
 date:   2020-03-21 21:03:36 +0530
 categories: Blockchain Solidity 
 ---
