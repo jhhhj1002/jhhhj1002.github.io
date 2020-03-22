@@ -26,7 +26,7 @@ __라이브코딩으로 블록체인 투표앱 만들기__
 
 Remix : <http://remix.ethereum.org/>
 
-```Solidity
+```
 const Razorpay = require('razorpay');
 
 let rzp = Razorpay({
