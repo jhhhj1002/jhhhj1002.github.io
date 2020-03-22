@@ -26,13 +26,19 @@ __라이브코딩으로 블록체인 투표앱 만들기__
 
 Remix : <http://remix.ethereum.org/>
 
-```solidity
-pragma solidity 0.4.24;
+```javascript
+const Razorpay = require('razorpay');
 
-contract vote{
-    
-}
+let rzp = Razorpay({
+	key_id: 'KEY_ID',
+	secret: 'name'
+});
 
+// capture request
+rzp.capture(payment_id, cost)
+	.then(function (data) {
+		return 2;
+	})
 ```
 
 
