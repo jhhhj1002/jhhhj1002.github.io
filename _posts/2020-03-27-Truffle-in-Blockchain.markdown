@@ -7,10 +7,14 @@ categories: Blockchain Dapp Truffle
 
 < 트러플 설치하기 >  
 
-node.js 버전 확인   
+Node 버전 확인   
 
 <img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" >
 
-truffle 설치
+Truffle 설치
 
-<img src="/assets/imgs/Blockchain&Truffle_02.png" width="40%" height="30%" >
+<img src="/assets/imgs/Blockchain&Truffle_02.png" width="80%" height="45%" >
+
+Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Solidity 버전 : 0.5.16
+
+<img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
