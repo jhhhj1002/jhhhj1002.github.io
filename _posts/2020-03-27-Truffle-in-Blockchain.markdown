@@ -30,3 +30,35 @@ dapp-example 폴더 생성 후 이동
 
 contracts 폴더 아래에 스마트 컨트랙트 작성
 <img src="/assets/imgs/Blockchain&Truffle_07.png" width="80%" height="45%" >
+
+
+< 스마트 컨트랙트 Hello,World! >
+인텔리제이로 이전에 만든 dapp-example 폴더 open 하여 코드 작업 ( Solidity Plugin 설치 필수 )
+contracts 폴더 아래에 solidity 컨트랙트 작성
+
+HelloWorld.sol 스마트 컨트랙트 작성 
+    - 자신의 solidity 버전에 따라서 solodity가 컴파일됨 ( truffle version시 나오는 solidity 버전 참고 )
+```
+pragma solidity ^0.5.8;  //자신의 solidity 버전에 따라서 solodity가 컴파일
+
+contract HelloWorld {
+
+    string public greeting;
+
+    constructor(string memory _greeting) public {
+        greeting = _greeting;
+    }
+
+    function setGreeting(string memory _greeting) public {
+        greeting = _greeting;
+    }
+
+    function say() public view returns (string memory){
+        return greeting;
+    }
+
+}
+
+```
+
+
