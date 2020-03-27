@@ -7,5 +7,6 @@ categories: Blockchain Dapp Truffle
 
 < 트러플 설치하기 >  
 
-node.js 버전 확인 
+node.js 버전 확인   
+
 <img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" ></img>
