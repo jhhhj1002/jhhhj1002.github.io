@@ -8,7 +8,7 @@ categories: Solidity Ethereum
 
 < Development Comparision - Java Web vs Etherum Contract >
 
-<img src="/assets/imgs/JavaVsEthereum.png" width="75%" height="55%" >
+<img src="/assets/imgs/JavaVsEthereum.png" width="75%" height="60%" >
 
 < About Solidity >
 
