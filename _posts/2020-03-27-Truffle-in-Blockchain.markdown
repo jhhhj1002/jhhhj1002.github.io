@@ -57,11 +57,11 @@ contract HelloWorld { //컨트랙트 이름 : HelloWorld
         greeting = _greeting;
     }
 
-    function setGreeting(string memory _greeting) public { //메소드 
+    function setGreeting(string memory _greeting) public { //메소드 - set
         greeting = _greeting;
     }
 
-    function say() public view returns (string memory){ //메소드 
+    function say() public view returns (string memory){ //메소드 - 출력
         return greeting;
     }
 
@@ -69,4 +69,5 @@ contract HelloWorld { //컨트랙트 이름 : HelloWorld
 
 ```
 
-
+컴파일 ( truffle compile )
+ <img src="/assets/imgs/Blockchain&Truffle_10.png" width="80%" height="45%" >
