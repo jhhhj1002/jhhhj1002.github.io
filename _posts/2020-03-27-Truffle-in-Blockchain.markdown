@@ -41,11 +41,11 @@ HelloWorld.sol 스마트 컨트랙트 작성
     - 자신의 solidity 버전에 따라서 solodity가 컴파일됨 ( truffle version시 나오는 solidity 버전 참고 )
       만약, 자신의 버전보다 아래버전의 solidity 사용시 truffle-config.js 파일의 compilers:{ solc:{ 의 version 수정 후 주석 삭제 하여 사용   
       <img src="/assets/imgs/Blockchain&Truffle_08.png" width="80%" height="45%" >
+
+  현재 solidity 버전 : 0.5.16 -> truffle-config.js 파일 수정 후 solidity 버전 : 0.5.8
+  <img src="/assets/imgs/Blockchain&Truffle_09.png" width="80%" height="45%" >
       
-      현재 solidity 버전 : 0.5.16 -> truffle-config.js 파일 수정 후 solidity 버전 : 0.5.8
-      <img src="/assets/imgs/Blockchain&Truffle_09.png" width="80%" height="45%" >
-      
-      
+
 ```
 pragma solidity ^0.5.8;  
 
