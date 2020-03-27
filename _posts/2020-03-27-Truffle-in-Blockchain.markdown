@@ -20,10 +20,10 @@ Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Soli
 <img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
 
 dapp-example 폴더 생성 후 이동
-<img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_04.png" width="80%" height="45%" >
 
 소스폴더 생성 : truffle init ( npm init 과 같은 역할 )
-<img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_05.png" width="80%" height="45%" >
 
 4가지 폴더가 생성됨
-<img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_06.png" width="80%" height="45%" >
