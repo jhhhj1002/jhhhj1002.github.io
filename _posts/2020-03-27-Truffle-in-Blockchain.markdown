@@ -4,3 +4,17 @@ title:  "[강의수강] 블록체인 Dapp 개발에 트러플 활용하기_기�
 date:   2020-03-27 17:21:36 +0530
 categories: Blockchain Dapp Truffle
 ---
+
+< 트러플 설치하기 >  
+
+Node 버전 확인   
+
+<img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" >
+
+Truffle 설치
+
+<img src="/assets/imgs/Blockchain&Truffle_02.png" width="80%" height="45%" >
+
+Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Solidity 버전 : 0.5.16
+
+<img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
