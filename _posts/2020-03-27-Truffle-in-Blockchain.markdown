@@ -49,19 +49,19 @@ HelloWorld.sol 스마트 컨트랙트 작성
 ```
 pragma solidity ^0.5.8;  
 
-contract HelloWorld {
+contract HelloWorld { //컨트랙트 이름 : HelloWorld
 
-    string public greeting;
+    string public greeting; //상태변수
 
-    constructor(string memory _greeting) public {
+    constructor(string memory _greeting) public { //생성자
         greeting = _greeting;
     }
 
-    function setGreeting(string memory _greeting) public {
+    function setGreeting(string memory _greeting) public { //메소드 
         greeting = _greeting;
     }
 
-    function say() public view returns (string memory){
+    function say() public view returns (string memory){ //메소드 
         return greeting;
     }
 
