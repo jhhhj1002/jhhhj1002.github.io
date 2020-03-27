@@ -9,4 +9,8 @@ categories: Blockchain Dapp Truffle
 
 node.js 버전 확인   
 
-<img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" ></img>
+<img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" >
+
+truffle 설치
+
+<img src="/assets/imgs/Blockchain&Truffle_02.png" width="40%" height="30%" >
