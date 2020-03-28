@@ -16,3 +16,20 @@ Quick start 선택
   NETWORK ID : 5777  
 
 <img src="/assets/imgs/Blockchain&Truffle_12.png" width="80%" height="45%" >
+
++ 테스트넷(Testnet), 매인넷(Mainnet), 로컬 에 컴파일된 SmartContract 배포 가능
+
+이번 실습에서는 로컬 (Ganache)에 배포 예정
+배포를 위해서는 migrations 폴더 아래에 JavaScript 코드 작성 필요
+
+배포 Script 작성 ( ex - 파일명 : 2_deploy_hello.js )
+
+```javascript
+
+const helloworld = artifacts.require("HelloWorld");
+
+module.exports = function(deployer){
+    deployer.deploy(helloworld,"Hello,World!");
+};
+
+```
