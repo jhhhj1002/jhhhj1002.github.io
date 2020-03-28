@@ -58,17 +58,38 @@ ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten
       -> ropsten 에 설정된 테스트넷에 배포 가능  
 
 
-로컬 Ganache에 배포 -> 배포 2개 완료 , 컨트랙트 주소( contract address ) 부여 완료 
+
+로컬 Ganache에 배포   
+  -> 배포 2개 완료 , 컨트랙트 주소( contract address ) 부여 완료 
 <img src="/assets/imgs/Blockchain&Truffle_13.png" width="80%" height="45%" >  
 <img src="/assets/imgs/Blockchain&Truffle_14.png" width="80%" height="45%" >
 
 
 < Rinkeby에 배포하기( truffle-hdwallet-provider ) >
 
-실제 테스트넷에 배포하기
+실제 테스트넷에 배포하기 ( ex - 테스트넷 : ropsten / rinkeby)
+  -> 이번 실습에서는 rinkeby에 배포
+  
+공개된 테스트넷을 이용하기 위해서는 외부서비스 사용 필요   
+  -> [Infura] 에서 이더리움 네트워크에 접근할 수 있는 인프라 서비스 제공 
+
+
+HDWalletProvider 패키지 설치 ( 배포시 전자서명을 해야하기 때문 )  
+    truffle-config.js 상단의 HDWalletProvider 선언 주석 제거,   
+    @truffle/hdwallet-provider 설치( npm install @truffle/hdwallet-provider) 
+```
+const HDWalletProvider = require('@truffle/hdwallet-provider');
+
+```
+<img src="/assets/imgs/Blockchain&Truffle_15.png" width="80%" height="45%" > 
+
+
+Infura 사이트에서 API key 발급 필요
+provider 와 network_id 를 제외한 나머지는 주석처리를 하여 default 값 사용가능 
+rinkeby의 network_id 는 4
 
 
 
 
 
-
+[Infura] : https://infura.io/
