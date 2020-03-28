@@ -5,3 +5,10 @@ date:   2020-03-27 18:38:36 +0530
 categories: Blockchain Dapp Truffle
 ---
 
+< 로컬 이더리움( Ganache )에 배포하기 >
+
+Ganache 설치
+<img src="/assets/imgs/Blockchain&Truffle_11.png" width="80%" height="45%" >
+
+Quick start 선택
+<img src="/assets/imgs/Blockchain&Truffle_12.png" width="80%" height="45%" >
