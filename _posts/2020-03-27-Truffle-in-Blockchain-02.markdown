@@ -30,7 +30,7 @@ Quick start 선택
 const helloworld = artifacts.require("HelloWorld"); // HelloWorld 는 컨트랙트 이름
 
 module.exports = function(deployer){
-    deployer.deploy(helloworld,"Hello,World!");
+    deployer.deploy(helloworld,"Hello,World!"); // 생성자에게 "Hello,World!" 파라미터를 넘겨줌 ( 파라미터가 여러개인 경우 콤마 사용 )
 };
 
 ```
@@ -50,11 +50,22 @@ module.exports = function(deployer){
 ```
 
 배포 명령어 : truffle migrate + 배포 타깃 지정 ( 없을시 development로 자동 배포 )
+  + 처음부터 새로 배포 : truffle migrate --reset
 
-ex - 타겟 설정 (development) : truffle migrate --network development 
-      -> development 에 설정된 local Ganache 에 배포 가능
-ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten
-      -> ropsten 에 설정된 테스트넷에 배포 가능
+ex - 타겟 설정 (development) : truffle migrate --network development  
+      -> development 에 설정된 local Ganache 에 배포 가능  
+ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten  
+      -> ropsten 에 설정된 테스트넷에 배포 가능  
+
+
+로컬 Ganache에 배포 -> 배포 2개 완료 , 컨트랙트 주소( contract address ) 부여 완료 
+<img src="/assets/imgs/Blockchain&Truffle_13.png" width="80%" height="45%" >  
+<img src="/assets/imgs/Blockchain&Truffle_14.png" width="80%" height="45%" >
+
+
+< Rinkeby에 배포하기( truffle-hdwallet-provider ) >
+
+실제 테스트넷에 배포하기
 
 
 
