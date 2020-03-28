@@ -79,14 +79,33 @@ HDWalletProvider 패키지 설치 ( 배포시 전자서명을 해야하기 때�
     @truffle/hdwallet-provider 설치( npm install @truffle/hdwallet-provider) 
 ```
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-
 ```
 <img src="/assets/imgs/Blockchain&Truffle_15.png" width="80%" height="45%" > 
 
 
 Infura 사이트에서 API key 발급 필요
 provider 와 network_id 를 제외한 나머지는 주석처리를 하여 default 값 사용가능 
-rinkeby의 network_id 는 4
+private key : 메타마스크의 계정키  
+private key를 HDWalletProvider의 key로 넘겨주어야함  
+    new HDWalletProvider( private key, API key ) 로 설정  
+rinkeby의 network_id 는 4  
+```
+     rinkeby: {
+       provider: () => new HDWalletProvider("0F8368B7339B099A5A2DC0D25A6414CEDD79F5EC13BE3618B4820B1B12AE6FFF",   "https://rinkeby.infura.io/v3/46d357e8ef4242ca8dc45778639636c1"),
+       network_id: 4,       // Ropsten's id
+//       gas: 5500000,        // Ropsten has a lower block limit than mainnet
+//       confirmations: 2,    // # of confs to wait between deployments. (default: 0)
+//       timeoutBlocks: 200,  // # of blocks before a deployment times out  (minimum/default: 50)
+//       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
+     },
+```
+
+
+rinkeby 테스트넷에 만든 SmartContract 배포 ( truffle migrate --network rinkeby --reset )  
+<img src="/assets/imgs/Blockchain&Truffle_16.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_17.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_18.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_19.png" width="80%" height="45%" > 
 
 
 
