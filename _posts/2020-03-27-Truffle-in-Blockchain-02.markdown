@@ -101,11 +101,17 @@ rinkeby의 network_id 는 4
 ```
 
 
-rinkeby 테스트넷에 만든 SmartContract 배포 ( truffle migrate --network rinkeby --reset )  
+rinkeby 테스트넷에 SmartContract 배포 ( truffle migrate --network rinkeby --reset )  
 <img src="/assets/imgs/Blockchain&Truffle_16.png" width="80%" height="45%" > 
 <img src="/assets/imgs/Blockchain&Truffle_17.png" width="80%" height="45%" > 
 <img src="/assets/imgs/Blockchain&Truffle_18.png" width="80%" height="45%" > 
 <img src="/assets/imgs/Blockchain&Truffle_19.png" width="80%" height="45%" > 
+
+
+truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소와, Rinkeby에 배포한 컨트랙트 주소 확인 가능
+<img src="/assets/imgs/Blockchain&Truffle_20.png" width="80%" height="45%" > 
+
+
 
 
 
