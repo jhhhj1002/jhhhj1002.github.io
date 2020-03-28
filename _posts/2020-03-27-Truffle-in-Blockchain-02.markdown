@@ -35,9 +35,9 @@ module.exports = function(deployer){
 
 ```
 
-배포 target 설정 ( truffle-config.js 의 networks 에서 설정 가능 )
-   -> development 에 배포 가능
-  Ganache의 Network Id, Port 번호 참고
+배포 target 설정 ( truffle-config.js 의 networks 에서 설정 가능 )  
+   -> development 에 배포 가능  
+  Ganache의 Network Id, Port 번호 참고  
 
 ```
 
@@ -48,6 +48,13 @@ module.exports = function(deployer){
  },
 
 ```
+
+배포 명령어 : truffle migrate + 배포 타깃 지정 ( 없을시 development로 자동 배포 )
+
+ex - 타겟 설정 (development) : truffle migrate --network development 
+      -> development 에 설정된 local Ganache 에 배포 가능
+ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten
+      -> ropsten 에 설정된 테스트넷에 배포 가능
 
 
 
