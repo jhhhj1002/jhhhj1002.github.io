@@ -9,7 +9,6 @@ categories: Blockchain Dapp Truffle
 <br/>
 
 <h3>< 트러플 리액트 박스 열어보기 ></h3>
-<br/>
         
 "react-dapp" 프로젝트 폴더 생성 후 이동  
 <img src="/assets/imgs/Blockchain&Truffle_24.png" width="65%" height="40%" >
@@ -44,8 +43,8 @@ import SimpleStorageContract from "./contracts/SimpleStorage.json";
 ```
 
 <br/>
+***
 <h3>< 리액트 애플리케이션과 결합하기 ></h3>
-<br/>
         
 truffle-config.js 파일의 networks 부분 로컬 Ganache 에 맞게 수정 후 배포
 ```
