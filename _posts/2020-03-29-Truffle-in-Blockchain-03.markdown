@@ -8,7 +8,7 @@ categories: Blockchain Dapp Truffle
 
 
 
-<h4>< 트러플 리액트 박스 열어보기 ></h4>
+<center><h3>< 트러플 리액트 박스 열어보기 ></h3></center>
 
 "react-dapp" 프로젝트 폴더 생성 후 이동  
 <img src="/assets/imgs/Blockchain&Truffle_24.png" width="65%" height="40%" >
@@ -22,9 +22,10 @@ truffle unbox react
 <img src="/assets/imgs/Blockchain&Truffle_25.png" width="65%" height="35%" >
 <img src="/assets/imgs/Blockchain&Truffle_26.png" width="65%" height="35%" >
 
+
 react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, client 라는 디렉토리가 하나더 생성됨 )  
-  client 디렉토리 : 애플리케이션을 위한 소스폴더  
-<img src="/assets/imgs/Blockchain&Truffle_27.png" width="80%" height="45%" >
+        + client 디렉토리 : 애플리케이션을 위한 소스폴더   
+<img src="/assets/imgs/Blockchain&Truffle_27.png" width="100%" height="60%" >
 
 
 컴파일 ( truffle compile )  
