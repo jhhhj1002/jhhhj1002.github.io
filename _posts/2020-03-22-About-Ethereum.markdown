@@ -1,10 +1,10 @@
 ---
 layout: post
 title:  "About Ethereum"
+excerpt: "이더리움에 관한 기억하고 싶은 사소한 내용"
 date:   2020-03-22 21:03:36 +0530
 categories: Solidity Ethereum
 ---
-
 
 < Development Comparision - Java Web vs Etherum Contract >
 
