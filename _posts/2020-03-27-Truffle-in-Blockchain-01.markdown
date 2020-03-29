@@ -10,14 +10,14 @@ categories: Blockchain Dapp Truffle
 <h3>< 트러플 설치하기 ></h3> 
 
 Node 버전 확인  
-<img src="/assets/imgs/Blockchain&Truffle_01.png" width="60%" height="40%" >
+<img src="/assets/imgs/Blockchain&Truffle_01.png" width="50%" height="35%" >
 
 <br/>
 Truffle 설치  
 <img src="/assets/imgs/Blockchain&Truffle_02.png" width="100%" height="60%" >
 
 Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Solidity 버전 : 0.5.16  
-<img src="/assets/imgs/Blockchain&Truffle_03.png" width="60%" height="40%" >
+<img src="/assets/imgs/Blockchain&Truffle_03.png" width="55%" height="35%" >
 
 dapp-example 폴더 생성 후 이동  
 <img src="/assets/imgs/Blockchain&Truffle_04.png" width="60%" height="40%" >
@@ -38,6 +38,8 @@ contracts 폴더 아래에 스마트 컨트랙트 작성
 <h3>< 스마트 컨트랙트 Hello,World! ></h3>
 
 인텔리제이로 이전에 만든 dapp-example 폴더 open 하여 코드 작업 ( Solidity Plugin 설치 필수 )  
+
+<br/>
 contracts 폴더 아래에 solidity 컨트랙트 작성
 
 <br/> 
@@ -45,6 +47,7 @@ contracts 폴더 아래에 solidity 컨트랙트 작성
 만약, 자신의 버전보다 아래버전의 solidity 사용시 truffle-config.js 파일의 compilers:{ solc:{ 의 version 수정 후 주석 삭제 하여 사용   
 <img src="/assets/imgs/Blockchain&Truffle_08.png" width="80%" height="45%" >
 
+<br/> 
 현재 solidity 버전 : 0.5.16 -> truffle-config.js 파일 수정 후 solidity 버전 : 0.5.8
 <img src="/assets/imgs/Blockchain&Truffle_09.png" width="60%" height="40%" >
       
@@ -75,7 +78,7 @@ contract HelloWorld { //컨트랙트 이름 : HelloWorld
 
 <br/>
 컴파일 ( truffle compile / compile --all ) 
- <img src="/assets/imgs/Blockchain&Truffle_10.png" width="80%" height="45%" >  
+ <img src="/assets/imgs/Blockchain&Truffle_10.png" width="60%" height="40%" >  
 -> 컴파일 결과 build 아래 contracts 아래 컴파일된 결과 json파일로 생성   
 + json 파일의 abi, deployedBytecode, bytecode 부분이 중요한 부분
  
