@@ -30,7 +30,7 @@ dapp-example 폴더 생성 후 이동
 
 <br/>
 4가지 폴더가 생성됨  
-<img src="/assets/imgs/Blockchain&Truffle_06.png" width="100%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_06.png" width="85%" height="40%" >
 
 <br/>
 contracts 폴더 아래에 스마트 컨트랙트 작성  
