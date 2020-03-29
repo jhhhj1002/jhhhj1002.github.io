@@ -77,6 +77,7 @@ module.exports = function(deployer){
 <br/>
 <h3>< Rinkeby에 배포하기( truffle-hdwallet-provider ) ></h3>
 
+<br/>
 실제 테스트넷에 배포하기 ( ex - 테스트넷 : ropsten / rinkeby )   
     -> 이번 실습에서는 rinkeby에 배포
   
@@ -84,21 +85,19 @@ module.exports = function(deployer){
   -> [Infura] 에서 이더리움 네트워크에 접근할 수 있는 인프라 서비스 제공 
 
 <br/>
+<br/>
 HDWalletProvider 패키지 설치 ( 배포시 전자서명을 해야하기 때문 )  
 > truffle-config.js 상단의 HDWalletProvider 선언 주석 제거
 ```
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 ```
+<br/>
 > @truffle/hdwallet-provider 설치( npm install @truffle/hdwallet-provider)  
-<img src="/assets/imgs/Blockchain&Truffle_15.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_15.png" width="100%" height="70%" > 
 
 
+<br/>
 Infura 사이트에서 API key 발급 필요
-provider 와 network_id 를 제외한 나머지는 주석처리를 하여 default 값 사용가능 
-private key : 메타마스크의 계정키  
-private key를 HDWalletProvider의 key로 넘겨주어야함  
-    new HDWalletProvider( private key, API key ) 로 설정  
-rinkeby의 network_id 는 4  
 ```
      rinkeby: {
        provider: () => new HDWalletProvider("0F8368B7339B099A5A2DC0D25A6414CEDD79F5EC13BE3618B4820B1B12AE6FFF",   "https://rinkeby.infura.io/v3/46d357e8ef4242ca8dc45778639636c1"),
@@ -109,8 +108,13 @@ rinkeby의 network_id 는 4
 //       skipDryRun: true     // Skip dry run before migrations? (default: false for public nets )
      },
 ```
++ provider 와 network_id 를 제외한 나머지는 주석처리를 하여 default 값 사용가능 
++ private key : 메타마스크의 계정키  
++ private key를 HDWalletProvider의 key로 넘겨주어야함 : new HDWalletProvider( private key, API key ) 로 설정  
++ rinkeby의 network_id 는 4  
 
 
+<br/>
 rinkeby 테스트넷에 SmartContract 배포 ( truffle migrate --network rinkeby --reset )  
 <img src="/assets/imgs/Blockchain&Truffle_16.png" width="80%" height="45%" > 
 <img src="/assets/imgs/Blockchain&Truffle_17.png" width="80%" height="45%" > 
