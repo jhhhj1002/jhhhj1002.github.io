@@ -85,11 +85,11 @@ module.exports = function(deployer){
 
 <br/>
 HDWalletProvider 패키지 설치 ( 배포시 전자서명을 해야하기 때문 )  
-    truffle-config.js 상단의 HDWalletProvider 선언 주석 제거,   
-    @truffle/hdwallet-provider 설치( npm install @truffle/hdwallet-provider) 
+> truffle-config.js 상단의 HDWalletProvider 선언 주석 제거
 ```
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 ```
+> @truffle/hdwallet-provider 설치( npm install @truffle/hdwallet-provider)  
 <img src="/assets/imgs/Blockchain&Truffle_15.png" width="80%" height="45%" > 
 
 
