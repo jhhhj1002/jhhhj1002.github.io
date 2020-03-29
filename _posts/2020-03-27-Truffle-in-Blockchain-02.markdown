@@ -1,6 +1,7 @@
 ---
 layout: post
 title:  "[강의수강] 블록체인 Dapp 개발에 트러플 활용하기_기본편 - 중"
+excerpt: "인프런 강의 - 블록체인 Dapp 개발에 트러플 활용하기 : 로컬 이더리움( Ganache )에 배포하기, Rinkeby에 배포하기( truffle-hdwallet-provider ), 단위 테스트"
 date:   2020-03-27 18:38:36 +0530
 categories: Blockchain Dapp Truffle
 ---
