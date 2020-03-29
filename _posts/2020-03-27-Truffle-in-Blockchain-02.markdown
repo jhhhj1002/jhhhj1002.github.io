@@ -58,7 +58,7 @@ module.exports = function(deployer){
 <br/>
 
 > 배포 명령어 : truffle migrate + 배포 타깃 ( 없을시 development로 자동 배포 )    
-> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;truffle migrate --reset ( 처음부터 새로 배포 )
+> truffle migrate --reset ( 처음부터 새로 배포 )
 
 > + ex - 타겟 설정 ( development ) : truffle migrate --network development  
       -> development 에 설정된 local Ganache 에 배포 가능  
@@ -77,13 +77,13 @@ module.exports = function(deployer){
 <br/>
 <h3>< Rinkeby에 배포하기( truffle-hdwallet-provider ) ></h3>
 
-실제 테스트넷에 배포하기 ( ex - 테스트넷 : ropsten / rinkeby)
-  -> 이번 실습에서는 rinkeby에 배포
+실제 테스트넷에 배포하기 ( ex - 테스트넷 : ropsten / rinkeby )   
+    -> 이번 실습에서는 rinkeby에 배포
   
 공개된 테스트넷을 이용하기 위해서는 외부서비스 사용 필요   
   -> [Infura] 에서 이더리움 네트워크에 접근할 수 있는 인프라 서비스 제공 
 
-
+<br/>
 HDWalletProvider 패키지 설치 ( 배포시 전자서명을 해야하기 때문 )  
     truffle-config.js 상단의 HDWalletProvider 선언 주석 제거,   
     @truffle/hdwallet-provider 설치( npm install @truffle/hdwallet-provider) 
