@@ -55,12 +55,12 @@ module.exports = function(deployer){
 + Ganache의 Network Id, Port 번호 참고
 
 <br/>
-배포 명령어 : truffle migrate + 배포 타깃 지정 ( 없을시 development로 자동 배포 )
-  + 처음부터 새로 배포 : truffle migrate --reset
+배포 명령어 : truffle migrate + 배포 타깃 ( 없을시 development로 자동 배포 )
+           truffle migrate --reset ( 처음부터 새로 배포 )
 
-ex - 타겟 설정 (development) : truffle migrate --network development  
++ ex - 타겟 설정 ( development ) : truffle migrate --network development  
       -> development 에 설정된 local Ganache 에 배포 가능  
-ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten  
++ ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten  
       -> ropsten 에 설정된 테스트넷에 배포 가능  
 
 
