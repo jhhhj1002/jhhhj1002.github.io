@@ -12,23 +12,24 @@ categories: Blockchain Dapp Truffle
 Node 버전 확인  
 <img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" >
 
+<br/>
 Truffle 설치  
-<img src="/assets/imgs/Blockchain&Truffle_02.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_02.png" width="100%" height="55%" >
 
 Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Solidity 버전 : 0.5.16  
-<img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_03.png" width="45%" height="35%" >
 
 dapp-example 폴더 생성 후 이동
-<img src="/assets/imgs/Blockchain&Truffle_04.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_04.png" width="45%" height="35%" >
 
 소스폴더 생성 : truffle init ( npm init 과 같은 역할 )
-<img src="/assets/imgs/Blockchain&Truffle_05.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_05.png" width="45%" height="35%" >
 
 4가지 폴더가 생성됨  
-<img src="/assets/imgs/Blockchain&Truffle_06.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_06.png" width="45%" height="35%" >
 
 contracts 폴더 아래에 스마트 컨트랙트 작성
-<img src="/assets/imgs/Blockchain&Truffle_07.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_07.png" width="45%" height="35%" >
 
 
 <br/>
@@ -49,6 +50,7 @@ HelloWorld.sol 스마트 컨트랙트 작성
 <img src="/assets/imgs/Blockchain&Truffle_09.png" width="80%" height="45%" >
       
 
+HelloWorld.sol 파일 ( solidity 버전 : 0.5.8 )
 ```
 pragma solidity ^0.5.8;  
 
