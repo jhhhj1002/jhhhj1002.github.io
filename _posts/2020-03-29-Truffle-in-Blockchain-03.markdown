@@ -30,7 +30,11 @@ react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, 
 컴파일 결과 client/src/contracts 디렉토리에 Json 파일로 생성됨
 <img src="/assets/imgs/Blockchain&Truffle_29.png" width="80%" height="45%" > 
 
-컴파일된 Json 파일 App.js 상단에서 import 해서 사용 -> 컨트랙트 인스턴스, 메소드 사용 가능 
+컴파일된 Json 파일 App.js 상단에서 import 해서 사용 
+  -> 컨트랙트 인스턴스, 메소드 사용 가능 
+```
+import SimpleStorageContract from "./contracts/SimpleStorage.json";
+```
 
 
 
