@@ -112,6 +112,30 @@ truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소�
 <img src="/assets/imgs/Blockchain&Truffle_20.png" width="80%" height="45%" > 
 
 
+< 단위 테스트 >
+
+현재 실습 진행 상황 : 로컬 Ganache 와 Rinkeby에 배포 완료   
+
+배포된 컨트랙트의 메소드 실행해보기
+  truffle console : 각각 배포된 배포 타겟에 콘솔을 통해서 연결 가능  
+                    -> 콘솔을 통해 메소드 실행 가능  
+  ex - truffle console --network development -> truffle( development ) : 로컬 Ganache 에 콘솔이 연결이 된 상태
+  ex - truffle console --network rinkeby -> truffle( rinkeby ) : 로컬 Ganache 에 콘솔이 연결이 된 상태
+  
+  
+콘솔로 연결을 한 후, 컨트랙트의 메소드 호출
+
+ex - 1 ) 로컬 Ganache 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Ganache에 배포된 컨트랙트 주소 사용), 메소드 호출  
+<img src="/assets/imgs/Blockchain&Truffle_21.png" width="80%" height="45%" > 
+
+ex - 2 ) Rinkeby 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Rinkeby에 배포된 컨트랙트 주소 사용), 메소드 호출  
+<img src="/assets/imgs/Blockchain&Truffle_22.png" width="80%" height="45%" >
+
+하지만, 메소드를 하나씩 실행하기에는 비효율적, 복잡한 메소드는 호출하기 힘듬
+
+                    
+               
+
 
 
 
