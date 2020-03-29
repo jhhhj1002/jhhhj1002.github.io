@@ -36,5 +36,59 @@ react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, 
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 ```
 
+< 리액트 애플리케이션과 결합하기 >
+
+getWeb3 -> truffle react box 에서 기본적으로 제공
+```
+import Web3 from "web3";
+
+const getWeb3 = () =>
+  new Promise((resolve, reject) => {
+    // Wait for loading completion to avoid race conditions with web3 injection timing.
+    window.addEventListener("load", async () => {
+      // Modern dapp browsers...
+      if (window.ethereum) {
+        const web3 = new Web3(window.ethereum); // window.ethereum == 메타마스크
+        try {
+          // Request account access if needed
+          await window.ethereum.enable();
+          // Acccounts now exposed
+          resolve(web3);
+        } catch (error) {
+          reject(error);
+        }
+      }
+      // Legacy dapp browsers...
+      else if (window.web3) {
+        // Use Mist/MetaMask's provider.
+        const web3 = window.web3;
+        console.log("Injected web3 detected.");
+        resolve(web3);
+      }
+      // Fallback to localhost; use dev console port by default...
+      else {
+        const provider = new Web3.providers.HttpProvider(
+          "http://127.0.0.1:8545"
+        );
+        const web3 = new Web3(provider);
+        console.log("No web3 instance injected, using Local web3.");
+        resolve(web3);
+      }
+    });
+  });
+
+export default getWeb3;
+
+```
+ 
+client 디렉토리로 이동 후, npm run start  
+<img src="/assets/imgs/Blockchain&Truffle_30.png" width="80%" height="45%" >    
+
+
+
+
+
+
+
 
 
