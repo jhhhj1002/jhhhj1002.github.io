@@ -6,11 +6,12 @@ date:   2020-03-22 21:03:36 +0530
 categories: Solidity Ethereum
 ---
 
-< Development Comparision - Java Web vs Etherum Contract >
+<h3>< Development Comparision - Java Web vs Etherum Contract ></h3>
 
-<img src="/assets/imgs/JavaVsEthereum.png" width="75%" height="60%" >
+<img src="/assets/imgs/JavaVsEthereum.png" width="80%" height="65%" >
 
-< About Solidity >
+<br/>
+<h3>< About Solidity ></h3>
 
 > msg.sender : 메세지를 보낸 주소  
 > msg.value : 메세지를 보낸 값
