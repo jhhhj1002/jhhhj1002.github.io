@@ -6,11 +6,12 @@ date:   2020-03-29 16:38:36 +0530
 categories: Blockchain Dapp Truffle
 ---
 
-
-
+<br/>
+<br/>
 
 <h3>< 트러플 리액트 박스 열어보기 ></h3>
-
+<br/>
+        
 "react-dapp" 프로젝트 폴더 생성 후 이동  
 <img src="/assets/imgs/Blockchain&Truffle_24.png" width="65%" height="40%" >
 
@@ -23,18 +24,20 @@ truffle unbox react
 <img src="/assets/imgs/Blockchain&Truffle_25.png" width="65%" height="35%" >
 <img src="/assets/imgs/Blockchain&Truffle_26.png" width="65%" height="35%" >
 
-
+<br/>
 react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, client 라는 디렉토리가 하나더 생성됨 )   
 <img src="/assets/imgs/Blockchain&Truffle_27.png" width="120%" height="100%" >
 + client 디렉토리 : 애플리케이션을 위한 소스폴더  
 
-
+<br/>
 컴파일 ( truffle compile )  
 <img src="/assets/imgs/Blockchain&Truffle_28.png" width="65%" height="35%" >  
 
+<br/>
 컴파일 결과 client/src/contracts 디렉토리에 Json 파일로 생성됨  
 <img src="/assets/imgs/Blockchain&Truffle_29.png" width="30%" height="20%" > 
 
+<br/>
 컴파일된 Json 파일 App.js 상단에서 import 해서 사용 
   -> 컨트랙트 인스턴스, 메소드 사용 가능 
 ```
