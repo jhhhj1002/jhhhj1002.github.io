@@ -137,8 +137,8 @@ truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소�
 <br/>
 배포된 컨트랙트의 메소드 실행해보기  
 > truffle console : 각각 배포된 배포 타겟에 콘솔을 통해서 연결 가능 -> 콘솔을 통해 메소드 실행 가능  
->	> ex - truffle console --network development -> truffle( development ) : 로컬 Ganache 에 콘솔이 연결이 된 상태  
->	> ex - truffle console --network rinkeby -> truffle( rinkeby ) : Rinkeby 에 콘솔이 연결이 된 상태
+> &nbsp;&nbsp;&nbsp;&nbsp; ex - truffle console --network development -> truffle( development ) : 로컬 Ganache 에 콘솔이 연결이 된 상태  
+> &nbsp;&nbsp;&nbsp;&nbsp; ex - truffle console --network rinkeby -> truffle( rinkeby ) : Rinkeby 에 콘솔이 연결이 된 상태
   
 <br/>
 콘솔로 연결을 한 후, 컨트랙트의 메소드 호출
@@ -150,7 +150,7 @@ truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소�
 <img src="/assets/imgs/Blockchain&Truffle_22.png" width="80%" height="45%" >
 
 <br/>
-하지만, 메소드를 하나씩 실행하기에는 비효율적, 복잡한 메소드는 호출하기 힘듬 =>> ##단위테스트 사용  
+하지만, 메소드를 하나씩 실행하기에는 비효율적, 복잡한 메소드는 호출하기 힘듬 =>> **단위테스트** 사용  
 
 <br/>
 test 폴더 아래에 JavaScript 로 테스트 스크립트 작성  
