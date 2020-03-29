@@ -18,3 +18,18 @@ truffle init vs truffle unbox react
 truffle unbox react  
 <img src="/assets/imgs/Blockchain&Truffle_25.png" width="80%" height="45%" >
 <img src="/assets/imgs/Blockchain&Truffle_26.png" width="80%" height="45%" >
+
+react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, client 라는 디렉토리가 하나더 생성됨 )  
+  client 디렉토리 : 애플리케이션을 위한 소스폴더  
+<img src="/assets/imgs/Blockchain&Truffle_27.png" width="80%" height="45%" >
+
+
+컴파일 ( truffle compile )  
+<img src="/assets/imgs/Blockchain&Truffle_28.png" width="80%" height="45%" >  
+
+컴파일 결과 client/src/contracts 디렉토리에 Json 파일로 생성됨
+<img src="/assets/imgs/Blockchain&Truffle_29.png" width="80%" height="45%" > 
+
+
+
+
