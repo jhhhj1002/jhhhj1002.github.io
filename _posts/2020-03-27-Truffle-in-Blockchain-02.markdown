@@ -9,21 +9,22 @@ categories: Blockchain Dapp Truffle
 <br/> 
 <h3>< 로컬 이더리움( Ganache )에 배포하기 ></h3>
 
-<br/>
 Ganache 설치
+<img src="/assets/imgs/Blockchain&Truffle_11.png" width="65%" height="35%" >
 
-<img src="/assets/imgs/Blockchain&Truffle_11.png" width="80%" height="45%" >
-
+<br/>
 Quick start 선택  
-  RPC Server : HTTP://127.0.0.1:7545  
-  NETWORK ID : 5777  
+<img src="/assets/imgs/Blockchain&Truffle_12.png" width="70%" height="40%" >
 
-<img src="/assets/imgs/Blockchain&Truffle_12.png" width="80%" height="45%" >
++ RPC Server : HTTP://127.0.0.1:7545  
++ NETWORK ID : 5777  
 
-+ 실제운영서버, 테스트넷(Testnet), 매인넷(Mainnet), 로컬 에 컴파일된 SmartContract 배포 가능
 
-이번 실습에서는 로컬 (Ganache)에 배포 예정
-배포를 위해서는 migrations 폴더 아래에 JavaScript 코드 작성 필요
+
+*실제운영서버, 테스트넷(Testnet), 매인넷(Mainnet), 로컬 에 컴파일된 SmartContract 배포 가능
+
+*이번 실습에서는 로컬 (Ganache)에 배포 예정   
+> 배포를 위해서는 migrations 폴더 아래에 JavaScript 코드 작성 필요
 
 
 배포 Script 작성 ( ex - 파일명 : 2_deploy_hello.js )
