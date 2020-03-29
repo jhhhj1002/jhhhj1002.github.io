@@ -118,13 +118,13 @@ Infura 사이트에서 API key 발급 필요
 <br/>
 rinkeby 테스트넷에 SmartContract 배포 ( truffle migrate --network rinkeby --reset )  
 <img src="/assets/imgs/Blockchain&Truffle_16.png" width="65%" height="35%" > 
-<img src="/assets/imgs/Blockchain&Truffle_17.png" width="65%" height="35%" > 
+<img src="/assets/imgs/Blockchain&Truffle_17.png" width="60%" height="30%" > 
 <img src="/assets/imgs/Blockchain&Truffle_18.png" width="65%" height="35%" > 
 <img src="/assets/imgs/Blockchain&Truffle_19.png" width="65%" height="35%" > 
 
 <br/>
 truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소와, Rinkeby에 배포한 컨트랙트 주소 확인 가능
-<img src="/assets/imgs/Blockchain&Truffle_20.png" width="45%" height="35%" > 
+<img src="/assets/imgs/Blockchain&Truffle_20.png" width="50%" height="40%" > 
 
 
 <br/>
@@ -134,27 +134,27 @@ truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소�
 
 현재 실습 진행 상황 : 로컬 Ganache 와 Rinkeby에 배포 완료   
 
-배포된 컨트랙트의 메소드 실행해보기
-  truffle console : 각각 배포된 배포 타겟에 콘솔을 통해서 연결 가능  
+<br/>
+배포된 컨트랙트의 메소드 실행해보기  
+> truffle console : 각각 배포된 배포 타겟에 콘솔을 통해서 연결 가능  
                     -> 콘솔을 통해 메소드 실행 가능  
-  ex - truffle console --network development -> truffle( development ) : 로컬 Ganache 에 콘솔이 연결이 된 상태
-  ex - truffle console --network rinkeby -> truffle( rinkeby ) : Rinkeby 에 콘솔이 연결이 된 상태
+> ex - truffle console --network development -> truffle( development ) : 로컬 Ganache 에 콘솔이 연결이 된 상태  
+> ex - truffle console --network rinkeby -> truffle( rinkeby ) : Rinkeby 에 콘솔이 연결이 된 상태
   
-  
+<br/>
 콘솔로 연결을 한 후, 컨트랙트의 메소드 호출
 
-ex - 1 ) 로컬 Ganache 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Ganache에 배포된 컨트랙트 주소 사용), 메소드 호출  
+> ex - 1 ) 로컬 Ganache 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Ganache에 배포된 컨트랙트 주소 사용), 메소드 호출  
 <img src="/assets/imgs/Blockchain&Truffle_21.png" width="80%" height="45%" > 
 
-ex - 2 ) Rinkeby 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Rinkeby에 배포된 컨트랙트 주소 사용), 메소드 호출  
+> ex - 2 ) Rinkeby 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Rinkeby에 배포된 컨트랙트 주소 사용), 메소드 호출  
 <img src="/assets/imgs/Blockchain&Truffle_22.png" width="80%" height="45%" >
 
+<br/>
 하지만, 메소드를 하나씩 실행하기에는 비효율적, 복잡한 메소드는 호출하기 힘듬 =>> 단위테스트 사용  
 
-test 폴더 아래에 JavaScript 로 테스트 스크립트 작성 
-  it()라는 함수를 호출하여 안에 테스트 로직 작성 ( it()를 여러개 호출하여 여러개의 단위테스트 실행 가능 )
-  before()를 이용하여 단위테스트에서 참조하는 컨트랙트의 인스턴스 생성 
-
+<br/>
+test 폴더 아래에 JavaScript 로 테스트 스크립트 작성  
 ```javascript
 
 const helloWorld = artifacts.require("HelloWorld");
@@ -191,11 +191,13 @@ contract ("HelloWorld", function (accounts){
 });
 
 ```
-               
-단위테스트 실행 ( truffle test : test 디렉토리 아래의 모든 테스트 스크립트 실행 )  
-  성공!  
-<img src="/assets/imgs/Blockchain&Truffle_23.png" width="80%" height="45%" >
++ it()라는 함수를 호출하여 안에 테스트 로직 작성 ( it()를 여러개 호출하여 여러개의 단위테스트 실행 가능 )  
++ before()를 이용하여 단위테스트에서 참조하는 컨트랙트의 인스턴스 생성 
 
+<br/>
+단위테스트 실행 ( truffle test : test 디렉토리 아래의 모든 테스트 스크립트 실행 )    
+<img src="/assets/imgs/Blockchain&Truffle_23.png" width="40%" height="40%" >
+-> 성공!
 
 
 [Infura]: https://infura.io/
