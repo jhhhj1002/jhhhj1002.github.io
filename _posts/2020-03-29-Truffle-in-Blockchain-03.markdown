@@ -43,7 +43,8 @@ import SimpleStorageContract from "./contracts/SimpleStorage.json";
 ```
 
 <br/>
-***
+* * *
+
 <h3>< 리액트 애플리케이션과 결합하기 ></h3>
         
 truffle-config.js 파일의 networks 부분 로컬 Ganache 에 맞게 수정 후 배포
