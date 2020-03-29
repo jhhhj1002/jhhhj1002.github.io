@@ -194,6 +194,7 @@ contract ("HelloWorld", function (accounts){
 + before()를 이용하여 단위테스트에서 참조하는 컨트랙트의 인스턴스 생성 
 
 <br/>
+<br/>
 단위테스트 실행 ( truffle test : test 디렉토리 아래의 모든 테스트 스크립트 실행 )    
 <img src="/assets/imgs/Blockchain&Truffle_23.png" width="45%" height="40%" >  
 -> 성공!
