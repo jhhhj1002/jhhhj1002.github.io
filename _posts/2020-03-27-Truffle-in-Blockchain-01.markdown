@@ -83,7 +83,9 @@ contract HelloWorld { //컨트랙트 이름 : HelloWorld
 
 <br/>
 컴파일 ( truffle compile / compile --all )  
- <img src="/assets/imgs/Blockchain&Truffle_10.png" width="60%" height="40%" >  
+ <img src="/assets/imgs/Blockchain&Truffle_10.png" width="65%" height="45%" >   
+
+<br/>
 -> 컴파일 결과 build 아래 contracts 아래 컴파일된 결과 json파일로 생성   
 + json 파일의 abi, deployedBytecode, bytecode 부분이 중요한 부분
  
