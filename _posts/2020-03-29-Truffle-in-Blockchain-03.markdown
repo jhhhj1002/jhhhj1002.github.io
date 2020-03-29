@@ -113,7 +113,7 @@ client 디렉토리로 이동 후, npm run start
 
 <br/>
 Ganache 계정중 import 할 계정의 Private Key 복사  
-<img src="/assets/imgs/Blockchain&Truffle_32.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_32.png" width="60%" height="35%" >
 
 <br/>
 메타마스크의 내계정 -> 계정 가져오기 -> 개인키 자리에 복사한 Private Key 입력 후 가져오기 선택
@@ -124,13 +124,15 @@ Ganache 계정중 import 할 계정의 Private Key 복사
 import 한 Ganache 계정에서 localhost:7545 계정으로 이더 10 전송   
 <img src="/assets/imgs/Blockchain&Truffle_35.png" width="35%" height="25%" >
    
-   
+
+<br/>
 프로젝트 재시작 ( npm run start )  
-  현재 - The stored value : 0
++ 현재 - The stored value : 0
 <img src="/assets/imgs/Blockchain&Truffle_36.png" width="80%" height="45%" >
 
 
-승인 선택 -> The stored value : 5 로 변경됨
+승인 선택  
++ The stored value : 5 로 변경됨
 <img src="/assets/imgs/Blockchain&Truffle_37.png" width="80%" height="45%" >
   
 트랜잭션 내역 확인가능  
