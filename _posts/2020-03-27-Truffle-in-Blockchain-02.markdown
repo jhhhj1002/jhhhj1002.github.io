@@ -131,9 +131,45 @@ ex - 1 ) 로컬 Ganache 에 연결 후, 컨트랙트의 인스턴스 가지고�
 ex - 2 ) Rinkeby 에 연결 후, 컨트랙트의 인스턴스 가지고옴 (Rinkeby에 배포된 컨트랙트 주소 사용), 메소드 호출  
 <img src="/assets/imgs/Blockchain&Truffle_22.png" width="80%" height="45%" >
 
-하지만, 메소드를 하나씩 실행하기에는 비효율적, 복잡한 메소드는 호출하기 힘듬
+하지만, 메소드를 하나씩 실행하기에는 비효율적, 복잡한 메소드는 호출하기 힘듬 =>> 단위테스트 사용  
 
-                    
+test 폴더 아래에 JavaScript 로 테스트 스크립트 작성 
+  it()라는 함수를 호출하여 안에 테스트 로직 작성 ( it()를 여러개 호출하여 여러개의 단위테스트 실행 가능 )
+  before()를 이용하여 단위테스트에서 참조하는 컨트랙트의 인스턴스 생성 
+
+```javascript
+
+const helloWorld = artifacts.require("HelloWorld");
+
+contract ("HelloWorld", function (accounts){
+
+    before(async() => { // before 에서 instance 생성
+        this.instance = await helloWorld.deployed();
+    });
+
+    // 단위테스트들 작성 : it() , 실행은 트러플로 : truffle test
+
+    it("should be initialized with correct value",async() => { // before 에서 instance 생성
+
+            const greeting = await this.instance.greeting();
+            assert.equal(greeting,"Hello,World!","Wrong initialized value!") 
+              // assert.equal를 이용하여 greeting의 값과 "Hello,World!" 이 같은지 확인, 다를경우 "Wrong initialized value!" 메세지 보여줌
+    
+    });
+
+    it("should change the greeting",async() => { // before 에서 instance 생성
+
+            const val = "Hello, Blockchain!";
+
+            await this.instance.setGreeting(val,{from: accounts[0]});
+            const greeting = await this.instance.say();
+            assert.equal(greeting,val,"does not changed the value!")
+
+    });
+
+});
+
+```
                
 
 
