@@ -6,7 +6,7 @@ date:   2020-03-29 16:38:36 +0530
 categories: Blockchain Dapp Truffle
 ---
 
-< ##트러플 리액트 박스 열어보기 >
+<h2>< 트러플 리액트 박스 열어보기 ></h2>
 
 react-dapp 이라는 프로젝트 폴더 생성 후 이동  
 <img src="/assets/imgs/Blockchain&Truffle_24.png" width="80%" height="45%" >
