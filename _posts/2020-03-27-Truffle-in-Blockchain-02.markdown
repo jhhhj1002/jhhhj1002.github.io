@@ -115,18 +115,22 @@ Infura 사이트에서 API key 발급 필요
 
 
 <br/>
+<br/>
 rinkeby 테스트넷에 SmartContract 배포 ( truffle migrate --network rinkeby --reset )  
-<img src="/assets/imgs/Blockchain&Truffle_16.png" width="80%" height="45%" > 
-<img src="/assets/imgs/Blockchain&Truffle_17.png" width="80%" height="45%" > 
-<img src="/assets/imgs/Blockchain&Truffle_18.png" width="80%" height="45%" > 
-<img src="/assets/imgs/Blockchain&Truffle_19.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_16.png" width="65%" height="35%" > 
+<img src="/assets/imgs/Blockchain&Truffle_17.png" width="65%" height="35%" > 
+<img src="/assets/imgs/Blockchain&Truffle_18.png" width="65%" height="35%" > 
+<img src="/assets/imgs/Blockchain&Truffle_19.png" width="65%" height="35%" > 
 
-
+<br/>
 truffle networks 를 통해 로컬( Ganache )에 배포한 컨트랙트 주소와, Rinkeby에 배포한 컨트랙트 주소 확인 가능
-<img src="/assets/imgs/Blockchain&Truffle_20.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_20.png" width="45%" height="35%" > 
 
 
-< 단위 테스트 >
+<br/>
+* * *
+<br/>
+<h3>< 단위 테스트 ></h3>
 
 현재 실습 진행 상황 : 로컬 Ganache 와 Rinkeby에 배포 완료   
 
