@@ -55,7 +55,7 @@ module.exports = function(deployer){
 + Ganache의 Network Id, Port 번호 참고
 
 <br/>
-배포 명령어 : truffle migrate + 배포 타깃 ( 없을시 development로 자동 배포 )
+배포 명령어 : truffle migrate + 배포 타깃 ( 없을시 development로 자동 배포 )    
            truffle migrate --reset ( 처음부터 새로 배포 )
 
 + ex - 타겟 설정 ( development ) : truffle migrate --network development  
@@ -63,13 +63,11 @@ module.exports = function(deployer){
 + ex - ropsten 테스트넷에 배포 : truffle migrate --network ropsten  
       -> ropsten 에 설정된 테스트넷에 배포 가능  
 
-
-
+<br/>
 로컬 Ganache에 배포   
-  -> 배포 2개 완료 , 컨트랙트 주소( contract address ) 부여 완료 
-<img src="/assets/imgs/Blockchain&Truffle_13.png" width="80%" height="45%" >  
-<img src="/assets/imgs/Blockchain&Truffle_14.png" width="80%" height="45%" >
-
+<img src="/assets/imgs/Blockchain&Truffle_13.png" width="65%" height="40%" >  
+<img src="/assets/imgs/Blockchain&Truffle_14.png" width="65%" height="40%" >
+ -> 배포 2개 완료 , 컨트랙트 주소( contract address ) 부여 완료 
 
 < Rinkeby에 배포하기( truffle-hdwallet-provider ) >
 
