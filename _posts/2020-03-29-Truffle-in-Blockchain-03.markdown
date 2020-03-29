@@ -28,11 +28,12 @@ react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, 
 <img src="/assets/imgs/Blockchain&Truffle_27.png" width="120%" height="100%" >
 + client 디렉토리 : 애플리케이션을 위한 소스폴더  
 
+
 컴파일 ( truffle compile )  
-<img src="/assets/imgs/Blockchain&Truffle_28.png" width="80%" height="45%" >  
+<img src="/assets/imgs/Blockchain&Truffle_28.png" width="65%" height="35%" >  
 
 컴파일 결과 client/src/contracts 디렉토리에 Json 파일로 생성됨
-<img src="/assets/imgs/Blockchain&Truffle_29.png" width="80%" height="45%" > 
+<img src="/assets/imgs/Blockchain&Truffle_29.png" width="40%" height="30%" > 
 
 컴파일된 Json 파일 App.js 상단에서 import 해서 사용 
   -> 컨트랙트 인스턴스, 메소드 사용 가능 
