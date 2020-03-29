@@ -106,9 +106,19 @@ client 디렉토리로 이동 후, npm run start
   
   import 한 Ganache 계정에서 localhost:7545 계정으로 이더 10 전송   
    <img src="/assets/imgs/Blockchain&Truffle_35.png" width="80%" height="45%" >
+   
+   
+프로젝트 재시작 ( npm run start )  
+  현재 - The stored value : 0
+<img src="/assets/imgs/Blockchain&Truffle_36.png" width="80%" height="45%" >
+
+
+승인 선택 -> The stored value : 5 로 변경됨
+<img src="/assets/imgs/Blockchain&Truffle_37.png" width="80%" height="45%" >
   
-
-
+트랜잭션 내역 확인가능  
+<img src="/assets/imgs/Blockchain&Truffle_38.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_39.png" width="80%" height="45%" >
 
 
 
