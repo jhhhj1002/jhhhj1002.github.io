@@ -108,7 +108,8 @@ client 디렉토리로 이동 후, npm run start
 
 
 실습에서 사용할 메타마스크 ( localhost:7545 ) 계정 추가로 필요   
-실습에서 사용할 이더 필요 -> Ganache 계정 중 하나를 메타마스크에 import 후, localhost:7545 계정으로 이더 전송 <br/>
+실습에서 사용할 이더 필요 -> Ganache 계정 중 하나를 메타마스크에 import 후, localhost:7545 계정으로 이더 전송
+<br/>
         가나슈 계정을 메타마스크에 import : 내계정 -> 계정 가져오기 -> 개인키 자리에 가나슈 계정 Private Key 입력  
   <img src="/assets/imgs/Blockchain&Truffle_32.png" width="80%" height="45%" >
   <img src="/assets/imgs/Blockchain&Truffle_33.png" width="80%" height="45%" >
