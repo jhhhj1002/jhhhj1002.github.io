@@ -14,12 +14,13 @@ categories: Blockchain Dapp Truffle
 <img src="/assets/imgs/Blockchain&Truffle_24.png" width="65%" height="40%" >
 
 + truffle init vs truffle unbox react  
-    truffle init : 스마트 컨트랙트 만을 개발할 때 사용    
-    truffle unbox react : 스마트 컨트랙트 뿐만 아니라 react 로 애플리케이션을 개발할 때 사용
+        truffle init : 스마트 컨트랙트 만을 개발할 때 사용    
+        truffle unbox react : 스마트 컨트랙트 뿐만 아니라 react 로 애플리케이션을 개발할 때 사용
+
 
 truffle unbox react  
-<img src="/assets/imgs/Blockchain&Truffle_25.png" width="80%" height="45%" >
-<img src="/assets/imgs/Blockchain&Truffle_26.png" width="80%" height="45%" >
+<img src="/assets/imgs/Blockchain&Truffle_25.png" width="65%" height="35%" >
+<img src="/assets/imgs/Blockchain&Truffle_26.png" width="65%" height="35%" >
 
 react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, client 라는 디렉토리가 하나더 생성됨 )  
   client 디렉토리 : 애플리케이션을 위한 소스폴더  
