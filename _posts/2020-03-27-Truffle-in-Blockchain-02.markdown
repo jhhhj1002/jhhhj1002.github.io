@@ -56,7 +56,7 @@ module.exports = function(deployer){
 
 <br/>
 > 배포 명령어 : truffle migrate + 배포 타깃 ( 없을시 development로 자동 배포 )    
->   >           truffle migrate --reset ( 처음부터 새로 배포 )
+>             truffle migrate --reset ( 처음부터 새로 배포 )
 
 > + ex - 타겟 설정 ( development ) : truffle migrate --network development  
       -> development 에 설정된 local Ganache 에 배포 가능  
