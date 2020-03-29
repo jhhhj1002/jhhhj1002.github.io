@@ -38,6 +38,16 @@ import SimpleStorageContract from "./contracts/SimpleStorage.json";
 
 < 리액트 애플리케이션과 결합하기 >
 
+truffle-config.js 파일의 networks 부분 로컬 Ganache 에 맞게 수정 후 배포
+```
+  networks: {
+    develop: {
+       host: "127.0.0.1",     // Localhost (default: none)
+       port: 7545,            // Standard Ethereum port (default: none)
+       network_id: "5777",       // Any network (default: none)
+    }
+```
+
 getWeb3 -> truffle react box 에서 기본적으로 제공
 ```
 import Web3 from "web3";
@@ -83,6 +93,22 @@ export default getWeb3;
  
 client 디렉토리로 이동 후, npm run start  
 <img src="/assets/imgs/Blockchain&Truffle_30.png" width="80%" height="45%" >    
+<img src="/assets/imgs/Blockchain&Truffle_31.png" width="80%" height="45%" > 
+
+
+실습에서 사용할 메타마스크 localhost:7545 계정 추가 필요   
+실습에서 사용할 이더 필요 -> 가나슈 계정을 메타마스크에 import 후, localhost:7545 계정으로 이더 전송 
+
+  가나슈 계정을 메타마스크에 import : 내계정 -> 계정 가져오기 -> 개인키 자리에 가나슈 계정 Private Key 입력  
+  <img src="/assets/imgs/Blockchain&Truffle_32.png" width="80%" height="45%" >
+  <img src="/assets/imgs/Blockchain&Truffle_33.png" width="80%" height="45%" >
+  <img src="/assets/imgs/Blockchain&Truffle_34.png" width="80%" height="45%" >
+  
+  import 한 Ganache 계정에서 localhost:7545 계정으로 이더 10 전송   
+   <img src="/assets/imgs/Blockchain&Truffle_35.png" width="80%" height="45%" >
+  
+
+
 
 
 
