@@ -6,18 +6,16 @@ date:   2020-03-27 17:21:36 +0530
 categories: Blockchain Dapp Truffle
 ---
 
-< 트러플 설치하기 >  
+<br/> 
+<h3>< 트러플 설치하기 ></h3> 
 
-Node 버전 확인   
-
+Node 버전 확인  
 <img src="/assets/imgs/Blockchain&Truffle_01.png" width="40%" height="30%" >
 
-Truffle 설치
-
+Truffle 설치  
 <img src="/assets/imgs/Blockchain&Truffle_02.png" width="80%" height="45%" >
 
-Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Solidity 버전 : 0.5.16
-
+Truffle, Solodity, Node, Web3.js 버전 확인 => Truffle 버전 : 5.1.18 , Solidity 버전 : 0.5.16  
 <img src="/assets/imgs/Blockchain&Truffle_03.png" width="80%" height="45%" >
 
 dapp-example 폴더 생성 후 이동
@@ -33,18 +31,22 @@ contracts 폴더 아래에 스마트 컨트랙트 작성
 <img src="/assets/imgs/Blockchain&Truffle_07.png" width="80%" height="45%" >
 
 
-< 스마트 컨트랙트 Hello,World! >
+<br/>
+* * *
+<br/>
+<h3>< 스마트 컨트랙트 Hello,World! ></h3>
 
-인텔리제이로 이전에 만든 dapp-example 폴더 open 하여 코드 작업 ( Solidity Plugin 설치 필수 )
+인텔리제이로 이전에 만든 dapp-example 폴더 open 하여 코드 작업 ( Solidity Plugin 설치 필수 )  
 contracts 폴더 아래에 solidity 컨트랙트 작성
 
-HelloWorld.sol 스마트 컨트랙트 작성 
-    - 자신의 solidity 버전에 따라서 solodity가 컴파일됨 ( truffle version시 나오는 solidity 버전 참고 )
-      만약, 자신의 버전보다 아래버전의 solidity 사용시 truffle-config.js 파일의 compilers:{ solc:{ 의 version 수정 후 주석 삭제 하여 사용   
-      <img src="/assets/imgs/Blockchain&Truffle_08.png" width="80%" height="45%" >
+<br/>
+HelloWorld.sol 스마트 컨트랙트 작성  
+> 자신의 solidity 버전에 따라서 solodity가 컴파일됨 ( truffle version시 나오는 solidity 버전 참고 )
+> 만약, 자신의 버전보다 아래버전의 solidity 사용시 truffle-config.js 파일의 compilers:{ solc:{ 의 version 수정 후 주석 삭제 하여 사용   
+  <img src="/assets/imgs/Blockchain&Truffle_08.png" width="80%" height="45%" >
 
-  현재 solidity 버전 : 0.5.16 -> truffle-config.js 파일 수정 후 solidity 버전 : 0.5.8
-  <img src="/assets/imgs/Blockchain&Truffle_09.png" width="80%" height="45%" >
+현재 solidity 버전 : 0.5.16 -> truffle-config.js 파일 수정 후 solidity 버전 : 0.5.8
+<img src="/assets/imgs/Blockchain&Truffle_09.png" width="80%" height="45%" >
       
 
 ```
