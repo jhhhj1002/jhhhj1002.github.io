@@ -153,7 +153,8 @@ contract ("HelloWorld", function (accounts){
 
             const greeting = await this.instance.greeting();
             assert.equal(greeting,"Hello,World!","Wrong initialized value!") 
-              // assert.equal를 이용하여 greeting의 값과 "Hello,World!" 이 같은지 확인, 다를경우 "Wrong initialized value!" 메세지 보여줌
+              // assert.equal를 이용하여 greeting의 값과 "Hello,World!" 이 같은지 확인, 
+                 다를경우 "Wrong initialized value!" 메세지 보여줌
     
     });
 
@@ -171,8 +172,9 @@ contract ("HelloWorld", function (accounts){
 
 ```
                
-
-
+단위테스트 실행 ( truffle test : test 디렉토리 아래의 모든 테스트 스크립트 실행 )  
+  성공!  
+<img src="/assets/imgs/Blockchain&Truffle_23.png" width="80%" height="45%" >
 
 
 
