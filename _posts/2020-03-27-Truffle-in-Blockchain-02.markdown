@@ -163,6 +163,8 @@ contract ("HelloWorld", function (accounts){
             const val = "Hello, Blockchain!";
 
             await this.instance.setGreeting(val,{from: accounts[0]});
+              // 상태변수를 바꾸는 트랜잭션이라 계정 필요 -> accounts 에서 가져옴
+              // accounts : 가나슈에서 자동으로 생성한 10개의 주소, 배열형태  
             const greeting = await this.instance.say();
             assert.equal(greeting,val,"does not changed the value!")
 
