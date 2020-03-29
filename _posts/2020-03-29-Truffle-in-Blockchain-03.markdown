@@ -7,7 +7,6 @@ categories: Blockchain Dapp Truffle
 ---
 
 <br/>
-<br/>
 
 <h3>< 트러플 리액트 박스 열어보기 ></h3>
 <br/>
@@ -38,14 +37,16 @@ react-dapp 프로젝트의 구조 ( dapp-example 프로젝트와 비교할 때, 
 <img src="/assets/imgs/Blockchain&Truffle_29.png" width="30%" height="20%" > 
 
 <br/>
-컴파일된 Json 파일 App.js 상단에서 import 해서 사용 
-  -> 컨트랙트 인스턴스, 메소드 사용 가능 
+컴파일된 Json 파일 App.js 상단에서 import 해서 사용  
+        -> 컨트랙트 인스턴스, 메소드 사용 가능 
 ```
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 ```
 
-< 리액트 애플리케이션과 결합하기 >
-
+<br/>
+<h3>< 리액트 애플리케이션과 결합하기 ></h3>
+<br/>
+        
 truffle-config.js 파일의 networks 부분 로컬 Ganache 에 맞게 수정 후 배포
 ```
   networks: {
@@ -56,6 +57,7 @@ truffle-config.js 파일의 networks 부분 로컬 Ganache 에 맞게 수정 후
     }
 ```
 
+<br/>
 getWeb3 -> truffle react box 에서 기본적으로 제공
 ```
 import Web3 from "web3";
