@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "[강의수강] 초보자를 위한 Lottery Dapp 개발 - 상"
-excerpt: "인프런 강의 - Ethereum 실전! 초보자를 위한 Lottery Dapp 개발: Dapp 개발환경 세팅, Truffle Project 설정 및 구조 설명"
+excerpt: "인프런 강의 - Ethereum 실전! 초보자를 위한 Lottery Dapp 개발: Dapp 개발환경 세팅, Truffle Project 설정 및 구조 설명, Truffle을 활용한 "
 date:   2020-04-11 13:38:36 +0530
 categories: Ethereum Dapp Truffle
 ---
@@ -26,7 +26,7 @@ categories: Ethereum Dapp Truffle
 6. metamask  
   [metamask 홈페이지] 에서 설치
 
-<h3>< Truffle Project 세팅 - Truffle Project 설정 및 구조 설명 ></h3>
+<h3>< Truffle Project 세팅 - Truffle Project 설정 및 구조 설명 ></h3>  
   
   설치 했었던 Truffle, Solidity, Node 버전 확인  
   <img src="/assets/imgs/Lottery&Dapp_06.png" width="65%" height="35%" >  
@@ -95,17 +95,75 @@ categories: Ethereum Dapp Truffle
   + 스마트 컨트랙트 재배포 시에는 truffle migrate --reset 명령어 사용  
   
   
+  <h3>< Truffle Project 세팅 - Truffle을 활용한 스마트 컨트랙트 상호작용 ></h3>  
+  
+  Lottey.sol 파일 작성  
+   ```
+   
+   pragma solidity >=0.4.21 <0.7.0;
+
+   contract Lottery {
+
+      address public owner; // public 으로 선언하여 자동 getter 생성
+
+       constructor() public {
+          owner = msg.sender;
+      }
+
+      function getSomeValue() public pure returns (uint256 value){
+          return 5;
+      }
+
+  }
+   
+  ```
+  
+   스마트 컨트랙트 재배포  
+   <img src="/assets/imgs/Lottery&Dapp_15.png" width="65%" height="35%" >  
+  
+   => 처음 배포시 Lottery의 gas used는 66838 이었는데 재배포시 gas used는 130157 로 증가  
+      코드를 작성한 만큼 블록체인에 저장해야 하기 때문에 많은 수수료가 사용됨  
+  
+  이전에 켜둔 ganache-cli 에서 배포 트랜잭션들 기록 -> 트랜잭션들 확인 가능  
+  <img src="/assets/imgs/Lottery&Dapp_16.png" width="65%" height="35%" >  
+  <img src="/assets/imgs/Lottery&Dapp_17.png" width="65%" height="35%" >  
+  
+  
+  블록체인에 접근 ( truffle console 명령어 사용 )  
+  <img src="/assets/imgs/Lottery&Dapp_18.png" width="65%" height="35%" >  
+  
+  web3 에 접근 해서 사용 가능  
+  <img src="/assets/imgs/Lottery&Dapp_19.png" width="65%" height="35%" >  
+  
+  받은 주소 10개 ( ganache-cli 의 Available Accounts ) 확인 가능 ( getAccounts() 명령어 사용 )  
+  <img src="/assets/imgs/Lottery&Dapp_20.png" width="65%" height="35%" >  
+
+  계정의 이더 확인 가능 ( getBalance('Account Address') 명령어 사용 )  
+  <img src="/assets/imgs/Lottery&Dapp_21.png" width="65%" height="35%" >  
+  + 원래 100 이더였는데 스마트 컨트랙트 배포하는데 이더 사용  
+
+  Lottery address 확인 가능 ( Lottery.json 파일의 networks의 address 와 동일 한 주소 확인 가능 )  
+  <img src="/assets/imgs/Lottery&Dapp_22.png" width="65%" height="35%" >  
+
+  lt 변수안에 배포된 Lottery의 instance 넣음  
+  <img src="/assets/imgs/Lottery&Dapp_23.png" width="65%" height="35%" >  
+
+  lt 에서 사용할 수 있는 여러가지 함수들을 abi 형태로 확인 가능  
+  <img src="/assets/imgs/Lottery&Dapp_24.png" width="65%" height="35%" >  
+
+  owner의 getter 함수 사용  
+  <img src="/assets/imgs/Lottery&Dapp_25.png" width="65%" height="35%" >  
+  -> eth.getAccounts()시 0번째 주소와 동일 ( truffle은 자신이 가진 주소중 0번째 주소를 deployer로 사용 )  
+  
+  Lottery.sol 파일 에 만든 getSomeValue() 함수 확인 -> 리턴 5확인 가능  
+  <img src="/assets/imgs/Lottery&Dapp_26.png" width="65%" height="35%" >  
+  
+  
+  <h3>< Truffle Project 세팅 - Truffle을 활용한 테스트 ></h3>  
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
+
 
 [Visual Studio Code 홈페이지]:   https://code.visualstudio.com
 [metamask 홈페이지]:   https://metamask.io
