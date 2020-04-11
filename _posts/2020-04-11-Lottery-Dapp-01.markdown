@@ -9,3 +9,9 @@ categories: Ethereum Dapp Truffle
 <br/>
 
 <h3>< Dapp 개발환경 세팅 ></h3>
+기본적으로 필요한 것
+node.js -> 강의에서는 8버전 사용, 현재 내 컴퓨터의 버전은 12.16.1
+vscode
+Truffle
+ganache-cli
+vscode - solidity extension
