@@ -143,5 +143,73 @@ categories: Ethereum Dapp Truffle
   
   <h3>< Truffle Project 세팅 - Truffle을 활용한 테스트 ></h3>  
   
+  test 폴더 안에 lottery.test.js 파일 생성 후 코드작성  
+  ```
+   
+   const Lottery = artifacts.require("Lottery");
+
+   contract('Lottery', function([deployer, user1, user2]){ // 각각의 파라미터에는 10개의 주소중 순서대로 들어감
+
+        beforeEach(async () => {
+            console.log('Before each')      
+        })
+
+        it('Basic test', async () => {
+            console.log('Basic test')
+        })
+
+    });
+   
+  ```
+  
+  + 테스트 하는 방법 1 : truffle test 명령어 이용 - test 폴더 안의 모드 파일 실행
+  + 테스트 하는 방법 2 : truffle test test/lottery.test.js - 테스트 할 파일 직접 지정 ( 단일 테스트 )  
+  
+  
+  테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )  
+  <img src="/assets/imgs/Lottery&Dapp_27.png" width="65%" height="35%" >  
+    lottery.test.js 파일의 console 로 찍은 부부 확이 가능  
+    
+  
+  테스트 파일 수정 후 테스트 파일 재실행( truffle test test/lottery.test.js 명령어 사용 )  
+  ```
+   
+   const Lottery = artifacts.require("Lottery");
+
+    contract('Lottery', function([deployer, user1, user2]){ // 각각의 파라미터에는 10개의 주소중 순서대로 들어감
+        let lottery;
+        beforeEach(async () => {
+            console.log('Before each')    
+            lottery = await Lottery.new();  // 컨트랙트 배포 
+        })
+
+        it('Basic test', async () => {
+            console.log('Basic test')
+            let owner = await lottery.owner();
+            let value = await lottery.getSomeValue();
+
+            console.log('owner : ' + owner);
+            console.log('value : ' + value);
+            assert.equal(value, 5) // value 값 5와 같은지 확인
+        })
+
+    });
+    
+  ```
+  <img src="/assets/imgs/Lottery&Dapp_28.png" width="65%" height="35%" >  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
  
