@@ -144,8 +144,4 @@ categories: Ethereum Dapp Truffle
   <h3>< Truffle Project 세팅 - Truffle을 활용한 테스트 ></h3>  
   
   
-  
-
-
-[Visual Studio Code 홈페이지]:   https://code.visualstudio.com
-[metamask 홈페이지]:   https://metamask.io
+ 
