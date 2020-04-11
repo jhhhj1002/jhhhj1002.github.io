@@ -25,3 +25,9 @@ categories: Ethereum Dapp Truffle
   <img src="/assets/imgs/Lottery&Dapp_05.png" width="65%" height="35%" >  
 6. metamask  
   [metamask 홈페이지] 에서 설치
+
+
+
+
+[Visual Studio Code 홈페이지]:   https://code.visualstudio.com
+[metamask 홈페이지]:   https://metamask.io
