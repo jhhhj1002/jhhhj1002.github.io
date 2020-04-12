@@ -14,8 +14,9 @@ categories: Ethereum Dapp Truffle
   <img src="/assets/imgs/Lottery&Dapp_01.png" width="50%" height="25%" >  
 2. vscode ( Visual Studio Code )   
   [Visual Studio Code 홈페이지] 에서 설치
+  <br/>
 3. Truffle -> 강의에서는 5.0.2버전 사용, 현재 내 컴퓨터의 버전은 5.1.18  
-  <img src="/assets/imgs/Lottery&Dapp_02.png" width="65%" height="25%" >  
+  <img src="/assets/imgs/Lottery&Dapp_02.png" width="50%" height="25%" >  
 4. ganache-cli  
   <img src="/assets/imgs/Lottery&Dapp_03.png" width="65%" height="35%" >  
   ganache-cli 명령어로 accounts 와 private keys 확인 가능  
