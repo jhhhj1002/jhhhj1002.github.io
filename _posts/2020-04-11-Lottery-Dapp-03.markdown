@@ -149,9 +149,57 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 
   }
   ``` 
 
+<h3>< Lottery Bet 함수 구현 ></h3>  
+
+contracts 폴더의 Lottery.sol 파일에 코드 추가 ( Bet 함수 추가 )  
+  ``` 
+  event BET(uint256 index, address indexed bettor, uint256 amount, byte challenges, uint256 answerBlockNumber);
+  
+  //Bet 베팅하는 function - 큐에 값을 저장
+    /**
+     * @dev 베팅을 한다. 유저는 0.005 ETH를 보내야 하고, 베팅용 1 byte 글자를 보낸다.
+     * 큐에 저장된 베팅 정보는 이후 distribute 함수에서 해결된다.
+     * @param challenges 유저가 베팅하는 글자
+     * @return 함수가 잘 수행되었는지 확인해는 bool 값
+     */
+    function bet(byte challenges) public payable returns (bool result) { // 돈을 보내기 위해 payable 사용
+        // Check the proper ether is sent - 돈이 제대로 왔는지 확인
+        require(msg.value == BET_AMOUNT, "Not enough ETH");
+
+        // Push bet to the queue
+        require(pushBet(challenges), "Fail to add a new Bet Info");
+
+        // Emit event
+        emit BET(_tail - 1, msg.sender, msg.value, challenges, block.number + BET_BLOCK_INTERVAL);
 
 
+        return true;
+    }
+    
+  ``` 
 
+test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )  
+  ``` 
+  const Lottery = artifacts.require("Lottery");
+
+  contract('Lottery', function([deployer, user1, user2]){ // 각각의 파라미터에는 10개의 주소중 순서대로 들어감
+      let lottery;
+      beforeEach(async () => {
+          console.log('Before each')    
+          lottery = await Lottery.new();  // 컨트랙트 배포 
+      })
+
+      it.only('getPot should return current pot', async () => { // 특정 케이스만 테스트 하기 위해 only 추가
+          let pot = await lottery.getPot();
+          assert.equal(pot, 0) // 처음에는 팟머니가 없는 상황이라 0
+      })
+
+  });
+  
+  ``` 
+
+컴파일  
+<img src="/assets/imgs/Lottery&Dapp_30.png" width="65%" height="35%" >
 
 
 
