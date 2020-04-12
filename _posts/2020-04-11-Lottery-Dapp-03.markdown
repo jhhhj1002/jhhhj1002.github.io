@@ -35,7 +35,9 @@ Lottery 규칙
   d. 결과값을 검증 할 수 없을 때에는 보내 돈을 돌려준다.       
 
 
-
+<br/>
+* * *
+<br/>
 <h3>< Lottery Domain 및 Queue 설계 ></h3> 
 
 
@@ -68,9 +70,9 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 팟머니에 대한 �
     }
 
   }
-   
   ```
-
+  
+<br/>
 Lottey.sol 을 테스트 하기위해 lottery.test.js 파일에 코드 추가  
   ```  
   it.only('getPot should return current pot', async () => { // 특정 케이스만 테스트 하기 위해 only 추가
@@ -79,10 +81,11 @@ Lottey.sol 을 테스트 하기위해 lottery.test.js 파일에 코드 추가
   })
   ```  
 
+<br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_29.png" width="65%" height="35%" >  
 
-
+<br/>
 contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 대한 코드 추가 )  
   ``` 
   pragma solidity >=0.4.21 <0.7.0;
@@ -149,6 +152,9 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 
   }
   ``` 
 
+<br/>
+* * *
+<br/>
 <h3>< Lottery Bet 함수 구현 ></h3>  
 
 contracts 폴더의 Lottery.sol 파일에 코드 추가 ( Bet 함수 추가 )  
@@ -175,9 +181,9 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( Bet 함수 추가 )
 
         return true;
     }
-    
   ``` 
 
+<br/>
 test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )  
   ``` 
   const Lottery = artifacts.require("Lottery");
@@ -195,9 +201,9 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )
       })
 
   });
-  
   ``` 
 
+<br/>
 컴파일  
 <img src="/assets/imgs/Lottery&Dapp_30.png" width="65%" height="35%" >
 
