@@ -10,6 +10,7 @@ categories: Ethereum Dapp Truffle
 
 <h3>< Dapp설계방법 및 Lottery 규칙 ></h3>  
 
+<br/>
 + <h4>Dapp 서비스 설계</h4>
 1. 지갑 관리 : 돈 관리  
 2. 아키텍쳐  
