@@ -26,13 +26,130 @@ Dapp 서비스 설계
   
 
 Lottery 규칙  
-1. +3 번째 블록해쉬의 첫 두글자 맞추기 '0xab...'
+1. +3 번째 블록해쉬의 첫 두글자 맞추기 '0xab...'  
   a. 유저가 던진 트랜잭션이 들어가는 블로 +3의 블록해쉬와 값을 비교  
 2. 팟머니  
   a. 결과가 나왔을 때만 유저가 보내 돈을 팟머니에 쌓기 
   b. 여러명이 맞추었을 때는 가자 먼저 맞춘 사람이 팟머니를 가져간다.  
-  c. 두 글자 중 하나만 맞추었을 때는 보내 돈을 돌려준다.  
+  c. 두 글자 중 하나만 맞추었을 때는 보내 돈을 돌려준다. 0.005ETH : 10 ** 15wei    
   d. 결과값을 검증 할 수 없을 때에는 보내 돈을 돌려준다.       
+
+
+
+<h3>< Lottery Domain 및 Queue 설계 ></h3> 
+
+
+contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 팟머니에 대한 코드 추가 )    
+  ```  
+   pragma solidity >=0.4.21 <0.7.0;
+
+   contract Lottery {
+
+     struct BetInfo {
+        uint256 answerBlockNumber; // 맞추려는 정답 블록 
+        address payable bettor; // 맞추었을때 돈을 보내주어야 할 better
+        byte challenges; // 0xab 와 같은 1바이트 글자
+    }
+
+     uint256 private _pot; // 팟머니 저장해야 할 곳
+
+     address public owner; // public 으로 선언하여 자동 getter 생성
+
+     constructor() public {
+        owner = msg.sender;
+    }
+
+    function getSomeValue() public pure returns (uint256 value){
+        return 5;
+    }
+
+    function getPot() public view returns (uint256 pot) { // 팟머니 get 하는 함수 
+        return _pot;
+    }
+
+  }
+   
+  ```
+
+Lottey.sol 을 테스트 하기위해 lottery.test.js 파일에 코드 추가  
+  ```  
+  it.only('getPot should return current pot', async () => { // 특정 케이스만 테스트 하기 위해 only 추가
+        let pot = await lottery.getPot();
+        assert.equal(pot, 0) // 처음에는 팟머니가 없는 상황이라 0
+  })
+  ```  
+
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )  
+<img src="/assets/imgs/Lottery&Dapp_29.png" width="65%" height="35%" >  
+
+
+contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 대한 코드 추가 )  
+  ``` 
+  pragma solidity >=0.4.21 <0.7.0;
+
+  contract Lottery {
+
+     struct BetInfo {
+        uint256 answerBlockNumber; // 맞추려는 정답 블록
+        address payable bettor; // 맞추었을때 돈을 보내주어야 할 better
+        byte challenges; // 0xab 와 같은 1바이트 글자
+     }
+
+    uint256 private _tail;
+    uint256 private _head;
+    mapping (uint256 => BetInfo) private _bets; // 큐
+
+    uint256 constant internal BLOCK_LIMIT = 256; // 블록해시로 확인할 수 있는 제한 256으로 고정 
+    uint256 constant internal BET_BLOCK_INTERVAL = 3; // +3 번째블럭으로 고정 
+    uint256 constant internal BET_AMOUNT = 5 * 10 ** 15; // 0.005ETH 베팅금액 고정
+     uint256 private _pot; // 팟머니 저장해야 할 곳
+
+     address public owner; // public 으로 선언하여 자동 getter 생성
+
+     constructor() public {
+        owner = msg.sender;
+    }
+
+    function getSomeValue() public pure returns (uint256 value){
+        return 5;
+    }
+
+    function getPot() public view returns (uint256 pot) { // 팟머니 get 하는 함수 
+        return _pot;
+    }
+
+    //Bet 베팅하는 function - 큐에 값을 저장
+
+    //Distribute 검증하는 function - 결과값을 검증
+
+
+     function getBetInfo(uint256 index) public view returns (uint256 answerBlockNumber, address bettor, byte challenges) {
+        BetInfo memory b = _bets[index];
+        answerBlockNumber = b.answerBlockNumber;
+        bettor = b.bettor;
+        challenges = b.challenges;
+    }
+
+    function pushBet(byte challenges) internal returns (bool) {
+        BetInfo memory b;
+        b.bettor = msg.sender; // 20 byte
+        b.answerBlockNumber = block.number + BET_BLOCK_INTERVAL; // 32byte  20000 gas
+        b.challenges = challenges; // byte // 20000 gas
+
+        _bets[_tail] = b;
+        _tail++; // 32byte 값 변화 // 20000 gas -> 5000 gas
+
+        return true;
+    }
+
+    function popBet(uint256 index) internal returns (bool) {
+        delete _bets[index];
+        return true;
+    }
+  }
+  ``` 
+
+
 
 
 
