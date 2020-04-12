@@ -90,6 +90,7 @@ categories: Ethereum Dapp Truffle
   <br/>
   <h3>< Truffle Project 세팅 - Truffle을 활용한 스마트 컨트랙트 상호작용 ></h3>  
   
+  <br/>
   Lottey.sol 파일 작성  
    ``` 
    pragma solidity >=0.4.21 <0.7.0;
@@ -130,7 +131,7 @@ categories: Ethereum Dapp Truffle
   
   <br/>
   받은 주소 10개 ( ganache-cli 의 Available Accounts ) 확인 가능 ( getAccounts( ) 명령어 사용 )  
-  <img src="/assets/imgs/Lottery&Dapp_20.png" width="50%" height="25%" >  
+  <img src="/assets/imgs/Lottery&Dapp_20.png" width="45%" height="20%" >  
 
   <br/>
   계정의 이더 확인 가능 ( getBalance('Account Address') 명령어 사용 )  
@@ -147,11 +148,11 @@ categories: Ethereum Dapp Truffle
 
   <br/>
   lt 에서 사용할 수 있는 여러가지 함수들을 abi 형태로 확인 가능  
-  <img src="/assets/imgs/Lottery&Dapp_24.png" width="45%" height="20%" >  
+  <img src="/assets/imgs/Lottery&Dapp_24.png" width="30%" height="15%" >  
 
   <br/>
   owner의 getter 함수 사용  
-  <img src="/assets/imgs/Lottery&Dapp_25.png" width="55%" height="25%" >  
+  <img src="/assets/imgs/Lottery&Dapp_25.png" width="45%" height="20%" >  
       -> eth.getAccounts()시 0번째 주소와 동일 ( truffle은 자신이 가진 주소중 0번째 주소를 deployer로 사용 )  
   
   <br/>
