@@ -10,7 +10,7 @@ categories: Ethereum Dapp Truffle
 
 <h3>< Dapp설계방법 및 Lottery 규칙 ></h3>  
 
-#Dapp 서비스 설계
+<h5>Dapp 서비스 설계</h5>
 1. 지갑 관리 : 돈 관리  
 2. 아키텍쳐  
   a. Smart Contract - front  
@@ -25,7 +25,7 @@ categories: Ethereum Dapp Truffle
   b. Private    
   
 <br/>
-#Lottery 규칙  
+<h4>Lottery 규칙</h4> 
 1. +3 번째 블록해쉬의 첫 두글자 맞추기 '0xab...'  
   a. 유저가 던진 트랜잭션이 들어가는 블로 +3의 블록해쉬와 값을 비교  
 2. 팟머니  
