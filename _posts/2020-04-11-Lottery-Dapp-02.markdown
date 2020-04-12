@@ -131,7 +131,7 @@ categories: Ethereum Dapp Truffle
   
   <br/>
   받은 주소 10개 ( ganache-cli 의 Available Accounts ) 확인 가능 ( getAccounts( ) 명령어 사용 )  
-  <img src="/assets/imgs/Lottery&Dapp_20.png" width="45%" height="20%" >  
+  <img src="/assets/imgs/Lottery&Dapp_20.png" width="40%" height="20%" >  
 
   <br/>
   계정의 이더 확인 가능 ( getBalance('Account Address') 명령어 사용 )  
@@ -164,6 +164,7 @@ categories: Ethereum Dapp Truffle
   <br/>
   <h3>< Truffle Project 세팅 - Truffle을 활용한 테스트 ></h3>  
   
+  <br/>
   test 폴더 안에 lottery.test.js 파일 생성 후 코드작성  
   ```   
    const Lottery = artifacts.require("Lottery");
@@ -214,7 +215,7 @@ categories: Ethereum Dapp Truffle
 
     });
   ```
-  <img src="/assets/imgs/Lottery&Dapp_28.png" width="65%" height="35%" >  
+  <img src="/assets/imgs/Lottery&Dapp_28.png" width="70%" height="35%" >  
   
   
   
