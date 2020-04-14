@@ -84,7 +84,7 @@ Lottey.sol 을 테스트 하기위해 lottery.test.js 파일에 코드 추가
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_29.png" width="70%" height="40%" >  
+<img src="/assets/imgs/Lottery&Dapp_29.png" width="75%" height="45%" >  
 
 <br/>
 contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 대한 코드 추가 )  
