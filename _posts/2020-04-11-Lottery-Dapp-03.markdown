@@ -208,8 +208,13 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )
 컴파일  
 <img src="/assets/imgs/Lottery&Dapp_30.png" width="70%" height="40%" >
 
+<br/>
+* * *
+<br/>
+<h3>< Lottery Bet 함수 테스트 ></h3>  
 
-
+<br/>
+test 폴더의 lottery.test.js 파일 코드 추가    
 
 
 
