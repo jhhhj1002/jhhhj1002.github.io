@@ -244,6 +244,17 @@ test 폴더의 lottery.test.js 파일 코드 추가
 
 
 <br/>
-test 폴더의 lottery.test.js 파일 코드 
+정상 트랜잭션 테스트 : test 폴더의 lottery.test.js 파일 코드 수정 ( 0.004ETH -> 0.005ETH ) 
+  ```
+  it.only('should fail when the bet money is not 0.005 ETH', async () => { //돈이 적절히 들어왔는지 확인
+       // Fail transaction
+       await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.004 ETH
+       // transaction object {chainId, value, to, from, gas(Limit), gasPrice}
+  })
+  ```
 
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_32.png" width="75%" height="45%" >  
+-> 테스트 통과  
 
