@@ -454,7 +454,7 @@ test 폴더의 lottery.test.js 파일 코드 수정
   
  <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
-<img src="/assets/imgs/Lottery&Dapp_39.png" width="75%" height="45%" >  
+< img src="/assets/imgs/Lottery&Dapp_39.png" width="75%" height="45%" >  
 -> 테스트 통과  
   
   
@@ -470,9 +470,30 @@ test 폴더의 lottery.test.js 파일 코드 수정
 3. ETH
   a. 1ETH = 10 ** 18 wei   
 4. 수수료 = gas * gas Price  
-  ex ) 21000 * ( 1gwei = 10 ** 9 wei ) = 21000000000000 wei =0.000021 ETH  
+  ex ) 21000 * ( 1gwei = 10 ** 9 wei ) = 21000000000000 wei = 0.000021 ETH  
   
 + <h4>GAS 계산</h4>
 1. 32bytes 새로 저장 = 20000 gas 사용   
   + block의 gas Limit 은 block안에 있는 모든 트랜잭션들이 사용할 수 있는 gas 제한 하는것 ( block Limit 이상의 연산 불가 )
-4. 수수료 = gas * gas Price  
+2. 32bytes 기존 변수에 있는 값을 바꿀 때 = 5000 gas 사용
+  a. 기존변수를 초기화해서 사용하지 않을 때 -> 10000 gas return  
+  
+<br/>
+스마트 컨트랙트 새로 배포 ( truffle migrate -- reset 명령어 사용 )      
+< img src="/assets/imgs/Lottery&Dapp_40.png" width="75%" height="45%" >  
+< img src="/assets/imgs/Lottery&Dapp_41.png" width="75%" height="45%" >  
+
+<br/>
+truffle 콘솔 사용 하여 bet 함수 테스트 ( truffle console 명령어 사용 )      
+< img src="/assets/imgs/Lottery&Dapp_42.png" width="75%" height="45%" >  
+< img src="/assets/imgs/Lottery&Dapp_43.png" width="75%" height="45%" >  
+-> bet function : 89338 gas 사용  
+
+
+<br/>
+truffle 콘솔 사용 하여 bet 함수 다시 테스트  
+< img src="/assets/imgs/Lottery&Dapp_44.png" width="75%" height="45%" > 
+-> bet function : 74338 gas 사용  
+
+=>> bet function : 89338 -> 74338 ==>> 기존에 있는 값을 바꿈으로 15000 gas 소모  
+
