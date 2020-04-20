@@ -202,7 +202,8 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )
       })
 
   });
-  ``` 
+  
+ ```  
 
 <br/>
 컴파일  
@@ -215,9 +216,34 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 추가    
+  ```
+  describe('Bet', function () {
+        it.only('should fail when the bet money is not 0.005 ETH', async () => { //돈이 적절히 들어왔는지 확인
+            // Fail transaction
+            await lottery.bet('0xab', {from : user1, value:4000000000000000}); // 0.004 ETH
+            // transaction object {chainId, value, to, from, gas(Limit), gasPrice}
+        })
+        it('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
+            // bet
+
+            // check contract balance
+
+            // check bet info
+
+            // check log
+
+        })
+    })
+  ```
+
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_31.png" width="75%" height="45%" >   
+
++ 0.005ETH가 아니라서, Lottery.sol파일의 "Not enough ETH" 메세지 require문 출력  
 
 
-
-
+<br/>
+test 폴더의 lottery.test.js 파일 코드 
 
 
