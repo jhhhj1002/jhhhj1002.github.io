@@ -258,3 +258,207 @@ test 폴더의 lottery.test.js 파일 코드 추가
 <img src="/assets/imgs/Lottery&Dapp_32.png" width="75%" height="45%" >  
 -> 테스트 통과  
 
+<br/>
+Fail 났을 때 어떻게 Catch 할 것 인가 -> Helper tool 사용 -> open zeppelin의 스마트 컨트랙트 툴 사용  ( 오픈소스 컨트랙트 라이브러리 모음 )  
++ 이번 실습에서는 openzeppelin-test-helpers/shouldFail.js 파일의 코드 참고  
+
+<br/>
+test폴더 아래에 assertRevert.js 파일 생성 후 코드작성  
+  ```
+  module.exports = async (promise) => {
+      try {
+          await promise;
+          assert.fail('Expected revert not received');
+      } catch (error) {
+          const revertFound = error.message.search('revert') >= 0;
+          assert(revertFound, `Expected "revert", got ${error} instead`);
+      }
+  }
+  ```
+
+<br/>
+test 폴더의 lottery.test.js 파일에 assertRevert 추가  
+  ```
+  const assertRevert = require('./asserRevert');
+  
+  it.only('should fail when the bet money is not 0.005 ETH', async () => { //돈이 적절히 들어왔는지 확인
+       // Fail transaction
+       await assertRevert(lottery.bet('0xab', {from : user1, value:4000000000000000})); // 0.004 ETH
+       // transaction object {chainId, value, to, from, gas(Limit), gasPrice}
+  })
+  ```
++ assertRevert function안에서 트랜잭션이 Fail시 던지는 에러를 try catch문으로 'revert' 글자가 들어있는지 확인 ( 글자가 있으면 Fail Catch )  
+
+
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_33.png" width="75%" height="45%" >  
+-> Fail난 트랜잭션이 잘 Catch 된것 확인 가능  
+
+<br/>
+test 폴더의 lottery.test.js 파일 코드 수정 ( 트랜잭션 receipt를 받아 찍어봄 )    
+  ```
+  it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
+       // bet
+       let receipt = await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.005 ETH
+       console.log(receipt);
+       
+       // check contract balance
+
+       // check bet info
+
+       // check log
+    
+  })
+  ```
+
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_34.png" width="75%" height="45%" >  
+-> 트랜잭션 receipt이 출력됨  
+
+
+<br/>
+test 폴더의 lottery.test.js 파일 코드 수정 ( 팟머니를 받아 찍어봄 )    
+  ```
+  it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
+       // bet
+       let receipt = await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.005 ETH
+       //console.log(receipt);
+       
+       let pot = await lottery.getPot();
+       assert.equal(pot, 0);
+       
+       // check contract balance
+
+       // check bet info
+
+       // check log
+    
+  })
+  ```
+
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_35.png" width="75%" height="45%" >  
+-> 테스트 통과  
+
+
+<br/>
+test 폴더의 lottery.test.js 파일 코드 수정 ( 컨트랙트 Balance 확인 )  
+  ```
+  it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
+       // bet
+       let receipt = await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.005 ETH
+       //console.log(receipt);
+
+       let pot = await lottery.getPot();
+       assert.equal(pot, 0);
+
+       // check contract balance == 0.005
+       let contractBalance = await web3.eth.getBalance(lottery.address);
+       assert.equal(contractBalance, 5000000000000000)
+       
+       // check bet info
+
+       // check log
+
+    })
+  ```
+
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_36.png" width="75%" height="45%" >  
+-> 테스트 통과  
+
+<br/>
+test 폴더의 lottery.test.js 파일 코드 수정 ( betAmount 변수추가 (0.005ETH), betInfo 확인 )  
+  ```
+  it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
+       // bet
+       let receipt = await lottery.bet('0xab', {from : user1, value:betAmount}); // 0.005 ETH
+       //console.log(receipt);
+
+       let pot = await lottery.getPot();
+       assert.equal(pot, 0);
+
+       // check contract balance == 0.005
+       let contractBalance = await web3.eth.getBalance(lottery.address);
+       assert.equal(contractBalance, betAmount)
+
+       // check bet info // 베팅 info가 제대로 들어왔는지
+       let currentBlockNumber = await web3.eth.getBlockNumber();
+
+       let bet = await lottery.getBetInfo(0);
+       assert.equal(bet.answerBlockNumber, currentBlockNumber + bet_block_interval); // answerBlockNumber 확인
+       assert.equal(bet.bettor, user1); // bettor 확인
+       assert.equal(bet.challenges, '0xab') // challenges 확인
+
+       // check log
+
+  })
+  ```
+  
+<br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_37.png" width="75%" height="45%" >  
+-> 테스트 통과    
+  
+  
+<br/>
+receipt 찍었을 때 logs 의 event에 'BET'이 있는지 확인 해야함  ->  test폴더 아래에 expectEvent.js 파일 생성 후 코드작성  
+  ```
+  const assert = require('chai').assert;
+
+  const inLogs = async (logs, eventName) => {
+      const event = logs.find(e => e.event === eventName);
+      assert.exists(event);
+  }
+
+  module.exports = {
+      inLogs
+  }
+  ```
+
+<br/>
+expectEvent.js 파일 에서 chai를 사용하기 위해 설치 ( npm install chai 명령어 사용 )  
+<img src="/assets/imgs/Lottery&Dapp_38.png" width="75%" height="45%" >  
+
+<br/>
+test 폴더의 lottery.test.js 파일 코드 수정
+  ```
+  it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
+       // bet
+       let receipt = await lottery.bet('0xab', {from : user1, value:betAmount}); // 0.005 ETH
+       //console.log(receipt);
+
+       let pot = await lottery.getPot();
+       assert.equal(pot, 0);
+
+       // check contract balance == 0.005
+       let contractBalance = await web3.eth.getBalance(lottery.address);
+       assert.equal(contractBalance, betAmount)
+
+       // check bet info // 베팅 info가 제대로 들어왔는지
+       let currentBlockNumber = await web3.eth.getBlockNumber();
+
+       let bet = await lottery.getBetInfo(0);
+       assert.equal(bet.answerBlockNumber, currentBlockNumber + bet_block_interval); // answerBlockNumber 확인
+       assert.equal(bet.bettor, user1); // bettor 확인
+       assert.equal(bet.challenges, '0xab') // challenges 확인
+
+       // check log
+       await expectEvent.inLogs(receipt.logs, 'BET')
+  })
+  ```
+  
+ <br/>
+테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
+<img src="/assets/imgs/Lottery&Dapp_39.png" width="75%" height="45%" >  
+-> 테스트 통과  
+  
+  
+  
+  
+  
+  
