@@ -474,7 +474,7 @@ test 폴더의 lottery.test.js 파일 코드 수정
   
 + <h4>GAS 계산</h4>
 1. 32bytes 새로 저장 = 20000 gas 사용   
-  + block의 gas Limit 은 block안에 있는 모든 트랜잭션들이 사용할 수 있는 gas 제한 하는것 ( block Limit 이상의 연산 불가 )  
+  a. block의 gas Limit 은 block안에 있는 모든 트랜잭션들이 사용할 수 있는 gas 제한 하는것 ( block Limit 이상의 연산 불가 )  
 2. 32bytes 기존 변수에 있는 값을 바꿀 때 = 5000 gas 사용  
   a. 기존변수를 초기화해서 사용하지 않을 때 -> 10000 gas return  
   
