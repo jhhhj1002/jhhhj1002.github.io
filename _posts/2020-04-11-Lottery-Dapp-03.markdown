@@ -458,7 +458,21 @@ test 폴더의 lottery.test.js 파일 코드 수정
 -> 테스트 통과  
   
   
+<br/>
+* * *
+<br/>
+<h3>< 이더리움 GAS 계산 ></h3>  
+
+<br/>  
++ <h4>Ethereum 수수료</h4>
+1. gas ( gas Limit )  
+2. gas Price  
+3. ETH
+  a. 1ETH = 10 ** 18 wei   
+4. 수수료 = gas * gas Price  
+  ex ) 21000 * ( 1gwei = 10 ** 9 wei ) = 21000000000000 wei =0.000021 ETH  
   
-  
-  
-  
++ <h4>GAS 계산</h4>
+1. 32bytes 새로 저장 = 20000 gas 사용   
+  + block의 gas Limit 은 block안에 있는 모든 트랜잭션들이 사용할 수 있는 gas 제한 하는것 ( block Limit 이상의 연산 불가 )
+4. 수수료 = gas * gas Price  
