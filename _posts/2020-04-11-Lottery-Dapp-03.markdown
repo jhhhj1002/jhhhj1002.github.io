@@ -492,7 +492,7 @@ truffle 콘솔 사용 하여 bet 함수 테스트 ( truffle console 명령어 �
 
 <br/>
 truffle 콘솔 사용 하여 bet 함수 다시 테스트  
-< img src="/assets/imgs/Lottery&Dapp_44.png" width="75%" height="45%" > 
+< img src="/assets/imgs/Lottery&Dapp_44.png" width="75%" height="45%" >  
 -> bet function : 74338 gas 사용  
 
 =>> bet function : 89338 -> 74338 ==>> 기존에 있는 값을 바꿈으로 15000 gas 소모  
