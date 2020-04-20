@@ -16,8 +16,8 @@ categories: Ethereum Dapp Truffle
 2. 아키텍쳐  
   a. Smart Contract - front  
   b. Smart Contract - Server - front  
-3. Code
-  a. 코드를 실행하는데 돈이든다. 
+3. Code  
+  a. 코드를 실행하는데 돈이든다.  
   b. 권한 관리  
   c. 비지니스 로직 업데이트  
   d. 데이터 마이그레이션     
@@ -30,7 +30,7 @@ categories: Ethereum Dapp Truffle
 1. +3 번째 블록해쉬의 첫 두글자 맞추기 '0xab...'  
   a. 유저가 던진 트랜잭션이 들어가는 블로 +3의 블록해쉬와 값을 비교  
 2. 팟머니  
-  a. 결과가 나왔을 때만 유저가 보내 돈을 팟머니에 쌓기 
+  a. 결과가 나왔을 때만 유저가 보내 돈을 팟머니에 쌓기  
   b. 여러명이 맞추었을 때는 가자 먼저 맞춘 사람이 팟머니를 가져간다.  
   c. 두 글자 중 하나만 맞추었을 때는 보내 돈을 돌려준다. 0.005ETH : 10 ** 15wei    
   d. 결과값을 검증 할 수 없을 때에는 보내 돈을 돌려준다.       
