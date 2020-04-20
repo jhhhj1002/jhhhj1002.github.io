@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "[강의수강] 초보자를 위한 Lottery Dapp 개발 - 상"
+title:  "[강의수강] 초보자를 위한 Lottery Dapp 개발 - 1"
 excerpt: "인프런 강의 - Ethereum 실전! 초보자를 위한 Lottery Dapp 개발 : Truffle Project 설정 및 구조 설명, Truffle을 활용한 테스트"
 date:   2020-04-11 13:38:36 +0530
 categories: Ethereum Dapp Truffle
