@@ -59,7 +59,7 @@ Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가
   ```  
 
   <br/>
-  2. getBlockStatus 함수
+  2. getBlockStatus 함수  
   ``` 
   function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockStatus) { // BlockStatus 리턴
           if(block.number > answerBlockNumber && block.number  <  BLOCK_LIMIT + answerBlockNumber) {
@@ -77,6 +77,8 @@ Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가
           return BlockStatus.BlockLimitPassed;
   }
   ``` 
+  
+
 
 <br/>
 * * *
