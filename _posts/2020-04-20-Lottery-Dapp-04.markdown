@@ -16,10 +16,10 @@ Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가
   1. distribute 함수  
     
   ```
-    /**
-     * @dev 베팅 결과값을 확인 하고 팟머니를 분배한다.
-     * 정답 실패 : 팟머니 축척, 정답 맞춤 : 팟머니 획득, 한글자 맞춤 or 정답 확인 불가 : 베팅 금액만 획득
-     */
+/**
+ * @dev 베팅 결과값을 확인 하고 팟머니를 분배한다.
+ * 정답 실패 : 팟머니 축척, 정답 맞춤 : 팟머니 획득, 한글자 맞춤 or 정답 확인 불가 : 베팅 금액만 획득
+*/
     function distribute() public {
         // head 3 4 5 6 7 8 9 10 11 12 tail // 큐 - 새로운 정보는 tail방향 부터 추가
         uint256 cur; // head 부터 tail 방향으로 도는 루프
@@ -58,7 +58,6 @@ Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가
     }
   ```  
 
-  <br/>
   2. getBlockStatus 함수  
   ``` 
   function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockStatus) { // BlockStatus 리턴
