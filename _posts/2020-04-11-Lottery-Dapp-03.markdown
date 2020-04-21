@@ -43,7 +43,7 @@ categories: Ethereum Dapp Truffle
 
 <br/>
 contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 팟머니에 대한 코드 추가 )    
-  ```  
+```
    pragma solidity >=0.4.21 <0.7.0;
 
    contract Lottery {
@@ -71,16 +71,16 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 팟머니에 대한 �
     }
 
   }
-  ```
+```
   
 <br/>
 Lottey.sol 을 테스트 하기위해 lottery.test.js 파일에 코드 추가  
-  ```  
+```
   it.only('getPot should return current pot', async () => { // 특정 케이스만 테스트 하기 위해 only 추가
         let pot = await lottery.getPot();
         assert.equal(pot, 0) // 처음에는 팟머니가 없는 상황이라 0
   })
-  ```  
+```
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )  
@@ -88,7 +88,7 @@ Lottey.sol 을 테스트 하기위해 lottery.test.js 파일에 코드 추가
 
 <br/>
 contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 대한 코드 추가 )  
-  ``` 
+```
   pragma solidity >=0.4.21 <0.7.0;
 
   contract Lottery {
@@ -151,7 +151,7 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 
         return true;
     }
   }
-  ``` 
+```
 
 <br/>
 * * *
@@ -160,7 +160,7 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( 기본적인 Queue에 
 
 <br/>
 contracts 폴더의 Lottery.sol 파일에 코드 추가 ( Bet 함수 추가 )  
-  ``` 
+```
   event BET(uint256 index, address indexed bettor, uint256 amount, byte challenges, uint256 answerBlockNumber);
   
   //Bet 베팅하는 function - 큐에 값을 저장
@@ -182,11 +182,11 @@ contracts 폴더의 Lottery.sol 파일에 코드 추가 ( Bet 함수 추가 )
 
       return true;
   }
-  ``` 
+```
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )  
-  ``` 
+```
   const Lottery = artifacts.require("Lottery");
 
   contract('Lottery', function([deployer, user1, user2]){ // 각각의 파라미터에는 10개의 주소중 순서대로 들어감
@@ -202,8 +202,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )
       })
 
   });
-  
- ```  
+``` 
 
 <br/>
 컴파일  
@@ -216,7 +215,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( Basic test 제거 )
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 추가    
-  ```
+```
   describe('Bet', function () {
         it.only('should fail when the bet money is not 0.005 ETH', async () => { //돈이 적절히 들어왔는지 확인
             // Fail transaction
@@ -234,7 +233,7 @@ test 폴더의 lottery.test.js 파일 코드 추가
 
         })
     })
-  ```
+```
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
@@ -245,13 +244,13 @@ test 폴더의 lottery.test.js 파일 코드 추가
 
 <br/>
 정상 트랜잭션 테스트 : test 폴더의 lottery.test.js 파일 코드 수정 ( 0.004ETH -> 0.005ETH ) 
-  ```
+```
   it.only('should fail when the bet money is not 0.005 ETH', async () => { //돈이 적절히 들어왔는지 확인
        // Fail transaction
        await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.004 ETH
        // transaction object {chainId, value, to, from, gas(Limit), gasPrice}
   })
-  ```
+```
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
@@ -264,7 +263,7 @@ Fail 났을 때 어떻게 Catch 할 것 인가 -> Helper tool 사용 -> open zep
 
 <br/>
 test폴더 아래에 assertRevert.js 파일 생성 후 코드작성  
-  ```
+```
   module.exports = async (promise) => {
       try {
           await promise;
@@ -274,11 +273,11 @@ test폴더 아래에 assertRevert.js 파일 생성 후 코드작성
           assert(revertFound, `Expected "revert", got ${error} instead`);
       }
   }
-  ```
+```
 
 <br/>
 test 폴더의 lottery.test.js 파일에 assertRevert 추가  
-  ```
+```
   const assertRevert = require('./asserRevert');
   
   it.only('should fail when the bet money is not 0.005 ETH', async () => { //돈이 적절히 들어왔는지 확인
@@ -286,7 +285,7 @@ test 폴더의 lottery.test.js 파일에 assertRevert 추가
        await assertRevert(lottery.bet('0xab', {from : user1, value:4000000000000000})); // 0.004 ETH
        // transaction object {chainId, value, to, from, gas(Limit), gasPrice}
   })
-  ```
+```
 + assertRevert function안에서 트랜잭션이 Fail시 던지는 에러를 try catch문으로 'revert' 글자가 들어있는지 확인 ( 글자가 있으면 Fail Catch )  
 
 
@@ -297,7 +296,7 @@ test 폴더의 lottery.test.js 파일에 assertRevert 추가
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 수정 ( 트랜잭션 receipt를 받아 찍어봄 )    
-  ```
+```
   it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
        // bet
        let receipt = await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.005 ETH
@@ -310,7 +309,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( 트랜잭션 receipt를 �
        // check log
     
   })
-  ```
+```
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
@@ -320,7 +319,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( 트랜잭션 receipt를 �
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 수정 ( 팟머니를 받아 찍어봄 )    
-  ```
+```
   it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
        // bet
        let receipt = await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.005 ETH
@@ -336,7 +335,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( 팟머니를 받아 찍어
        // check log
     
   })
-  ```
+```
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
@@ -346,7 +345,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( 팟머니를 받아 찍어
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 수정 ( 컨트랙트 Balance 확인 )  
-  ```
+```
   it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
        // bet
        let receipt = await lottery.bet('0xab', {from : user1, value:5000000000000000}); // 0.005 ETH
@@ -364,7 +363,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( 컨트랙트 Balance 확�
        // check log
 
     })
-  ```
+```
 
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
@@ -373,7 +372,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( 컨트랙트 Balance 확�
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 수정 ( betAmount 변수추가 (0.005ETH), betInfo 확인 )  
-  ```
+```
   it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
        // bet
        let receipt = await lottery.bet('0xab', {from : user1, value:betAmount}); // 0.005 ETH
@@ -397,7 +396,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( betAmount 변수추가 (0.
        // check log
 
   })
-  ```
+```
   
 <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
@@ -407,7 +406,7 @@ test 폴더의 lottery.test.js 파일 코드 수정 ( betAmount 변수추가 (0.
   
 <br/>
 receipt 찍었을 때 logs 의 event에 'BET'이 있는지 확인 해야함  ->  test폴더 아래에 expectEvent.js 파일 생성 후 코드작성  
-  ```
+```
   const assert = require('chai').assert;
 
   const inLogs = async (logs, eventName) => {
@@ -418,7 +417,7 @@ receipt 찍었을 때 logs 의 event에 'BET'이 있는지 확인 해야함  -> 
   module.exports = {
       inLogs
   }
-  ```
+```
 
 <br/>
 expectEvent.js 파일 에서 chai를 사용하기 위해 설치 ( npm install chai 명령어 사용 )  
@@ -426,7 +425,7 @@ expectEvent.js 파일 에서 chai를 사용하기 위해 설치 ( npm install ch
 
 <br/>
 test 폴더의 lottery.test.js 파일 코드 수정
-  ```
+```
   it.only('should put the bet to the bet queue with 1 bet', async () => { // 값이 적절히 들어왔는지 확인
        // bet
        let receipt = await lottery.bet('0xab', {from : user1, value:betAmount}); // 0.005 ETH
@@ -450,7 +449,7 @@ test 폴더의 lottery.test.js 파일 코드 수정
        // check log
        await expectEvent.inLogs(receipt.logs, 'BET')
   })
-  ```  
+```  
   
  <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
