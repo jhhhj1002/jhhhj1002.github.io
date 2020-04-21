@@ -12,7 +12,7 @@ categories: Ethereum Dapp Truffle
 <h3>< Lottery Distribute 함수 설계 ></h3>  
   
 <br/>
-Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가  
+Lottey.sol 파일에 distribute 함수 추가  
     
 ```
 /**
@@ -56,6 +56,8 @@ function distribute() public {
 }
 ```  
 
+<br/>
+Lottey.sol 파일에 getBlockStatus 함수 추가  
 ```
 enum BlockStatus {Checkable, NotRevealed, BlockLimitPassed}
 
@@ -131,3 +133,57 @@ function isMatch(byte challenges, bytes32 answer) public pure returns (BettingRe
 }
 ``` 
 
+<br/>
+컴파일 ( truffle compile 명령어 사용 )  
+<img src="/assets/imgs/Lottery&Dapp_45.png" width="75%" height="45%" >  
+
+<br/>
+truffle console로 blockHash 가지고옴 ( 아무 hash 가지고 와도 상관없음 )  
+<img src="/assets/imgs/Lottery&Dapp_46.png" width="75%" height="45%" >  
+-> blockHash : '0x60be4645a8d37dc4d3c0a2b9e34588af78cd3cd0a42cfa73b9116774fd6edf86'  
+
+<br/>
+test 폴더 아래의 lottery.test.js 파일에 isMatch 함수 테스트 코드 추가 ( 위에서 가져온 blockHash 사용, 맨 앞만 ab로 바꿔서 사용 )    
+```
+describe.only('isMatch', function () {
+    it('should be BettingResult.Win when two characters match', async () => {
+        let blockHash = '0xabbe4645a8d37dc4d3c0a2b9e34588af78cd3cd0a42cfa73b9116774fd6edf86'
+        let matchingResult = await lottery.isMatch('0xab', blockHash);
+        assert.equal(matchingResult, 1);
+     })
+})
+```
+
+<br/>
+lottery.test.js 파일 테스트 ( truffle test test/lottery.test.js 명령어 사용 )  
+<img src="/assets/imgs/Lottery&Dapp_47.png" width="75%" height="45%" >  
+
+<br/>
+test 폴더 아래의 lottery.test.js 파일에 isMatch 함수 테스트 코드 추가 ( Fail, Draw 경우 추가 )  
+```
+describe.only('isMatch', function () {
+    let blockHash = '0xabbe4645a8d37dc4d3c0a2b9e34588af78cd3cd0a42cfa73b9116774fd6edf86'
+    it('should be BettingResult.Win when two characters match', async () => {            
+        let matchingResult = await lottery.isMatch('0xab', blockHash);
+        assert.equal(matchingResult, 1);
+    })
+
+    it('should be BettingResult.Fail when two characters match', async () => {
+        let matchingResult = await lottery.isMatch('0xcd', blockHash);
+        assert.equal(matchingResult, 0);
+    })
+
+    it('should be BettingResult.Draw when two characters match', async () => {
+        let matchingResult = await lottery.isMatch('0xaf', blockHash);
+        assert.equal(matchingResult, 2);
+
+        matchingResult = await lottery.isMatch('0xfb', blockHash);
+        assert.equal(matchingResult, 2);
+    })
+})
+```
+
+<br/>
+lottery.test.js 파일 다시 테스트 ( truffle test test/lottery.test.js 명령어 사용 )  
+<img src="/assets/imgs/Lottery&Dapp_48.png" width="75%" height="45%" >  
+=>> isMatch 함수에 대한 테스트 완료  
