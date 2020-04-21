@@ -55,23 +55,23 @@ function distribute() public {
        popBet(cur);
    }
 }
-```  
- 
+```
+<br/> 
 ```
 function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockStatus) { // BlockStatus 리턴
-          if(block.number > answerBlockNumber && block.number  <  BLOCK_LIMIT + answerBlockNumber) {
-              return BlockStatus.Checkable;
-          }
+    if(block.number > answerBlockNumber && block.number  <  BLOCK_LIMIT + answerBlockNumber) {
+        return BlockStatus.Checkable;
+    }
 
-          if(block.number <= answerBlockNumber) {
-              return BlockStatus.NotRevealed;
-          }
+    if(block.number <= answerBlockNumber) {
+        return BlockStatus.NotRevealed;
+    }
 
-          if(block.number >= answerBlockNumber + BLOCK_LIMIT) {
-              return BlockStatus.BlockLimitPassed;
-          }
+    if(block.number >= answerBlockNumber + BLOCK_LIMIT) {
+         return BlockStatus.BlockLimitPassed;
+    }
 
-          return BlockStatus.BlockLimitPassed;
+    return BlockStatus.BlockLimitPassed;
   }  
 ``` 
   
