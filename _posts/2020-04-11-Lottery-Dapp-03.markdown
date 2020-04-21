@@ -484,7 +484,7 @@ test 폴더의 lottery.test.js 파일 코드 수정
 
 <br/>
 truffle 콘솔 사용 하여 bet 함수 테스트 ( truffle console 명령어 사용 )      
-<img src="/assets/imgs/Lottery&Dapp_42.png" width="45%" height="35%" >  
+<img src="/assets/imgs/Lottery&Dapp_42.png" width="55%" height="35%" >  
 <img src="/assets/imgs/Lottery&Dapp_43.png" width="75%" height="45%" >  
 -> bet function : 89338 gas 사용  
 
