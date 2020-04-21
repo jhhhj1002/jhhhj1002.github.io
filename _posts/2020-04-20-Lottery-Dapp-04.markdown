@@ -10,32 +10,12 @@ categories: Ethereum Dapp Truffle
 <br/>
 
 <h3>< Lottery Distribute 함수 설계 ></h3>  
-
-<br/>
-+ <h4>Dapp 서비스 설계</h4>
-1. 지갑 관리 : 돈 관리  
-2. 아키텍쳐  
-  a. Smart Contract - front  
-  b. Smart Contract - Server - front  
-3. Code  
-  a. 코드를 실행하는데 돈이든다.  
-  b. 권한 관리  
-  c. 비지니스 로직 업데이트  
-  d. 데이터 마이그레이션     
-4. 운영  
-  a. Public  
-  b. Private    
-  
-  
-<br/>
-* * *
-<br/>
-<h3>< Lottery Domain 및 Queue 설계 ></h3> 
   
 <br/>
 Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가  
   1. distribute 함수  
 ```
+
     /**
      * @dev 베팅 결과값을 확인 하고 팟머니를 분배한다.
      * 정답 실패 : 팟머니 축척, 정답 맞춤 : 팟머니 획득, 한글자 맞춤 or 정답 확인 불가 : 베팅 금액만 획득
@@ -95,6 +75,11 @@ function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockS
         return BlockStatus.BlockLimitPassed;
 }
 ``` 
+
+<br/>
+* * *
+<br/>
+<h3>< Lottery isMatch 함수 구현 및 테스트 ></h3> 
   
 <br/>
 Lottey.sol 파일에 isMatch 함수 추가     
