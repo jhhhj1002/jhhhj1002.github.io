@@ -450,7 +450,7 @@ test 폴더의 lottery.test.js 파일 코드 수정
        // check log
        await expectEvent.inLogs(receipt.logs, 'BET')
   })
-  ```
+  ```  
   
  <br/>
 테스트 파일 실행 ( truffle test test/lottery.test.js 명령어 사용 )    
