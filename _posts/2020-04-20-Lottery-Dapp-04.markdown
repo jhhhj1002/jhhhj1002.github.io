@@ -22,7 +22,6 @@ Lottey.sol 파일에 distribute 함수, getBlockStatus 함수 추가
 function distribute() public {
   // head 3 4 5 6 7 8 9 10 11 12 tail // 큐 - 새로운 정보는 tail방향 부터 추가
   uint256 cur; // head 부터 tail 방향으로 도는 루프
-  uint256 transferAmount;
 
   BetInfo memory b;
   BlockStatus currentBlockStatus; // 현재 BlockStatus
@@ -55,9 +54,11 @@ function distribute() public {
        popBet(cur);
    }
 }
+```  
+
 ```
-<br/> 
-```
+enum BlockStatus {Checkable, NotRevealed, BlockLimitPassed}
+
 function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockStatus) { // BlockStatus 리턴
     if(block.number > answerBlockNumber && block.number  <  BLOCK_LIMIT + answerBlockNumber) {
         return BlockStatus.Checkable;
@@ -84,5 +85,49 @@ function getBlockStatus(uint256 answerBlockNumber) internal view returns (BlockS
   
 <br/>
 Lottey.sol 파일에 isMatch 함수 추가     
+```
+enum BettingResult {Fail, Win, Draw}
 
+/**
+* @dev 베팅글자와 정답을 확인한다.
+* @param challenges 베팅 글자
+* @param answer 블락해쉬
+* @return 정답결과
+*/
+function isMatch(byte challenges, bytes32 answer) public pure returns (BettingResult) {
+    // challenges 0xab
+    // answer 0xab......ff 32 bytes
+
+    byte c1 = challenges;
+    byte c2 = challenges;
+
+    byte a1 = answer[0];
+    byte a2 = answer[0];
+
+    // Get first number
+    c1 = c1 >> 4; // 0xab -> 0x0a
+    c1 = c1 << 4; // 0x0a -> 0xa0
+
+    a1 = a1 >> 4;
+    a1 = a1 << 4;
+
+    // Get Second number
+    c2 = c2 << 4; // 0xab -> 0xb0
+    c2 = c2 >> 4; // 0xb0 -> 0x0b
+
+    a2 = a2 << 4;
+    a2 = a2 >> 4;
+
+    if(a1 == c1 && a2 == c2) {
+        return BettingResult.Win;
+    }
+
+    if(a1 == c1 || a2 == c2) {
+        return BettingResult.Draw;
+    }
+
+    return BettingResult.Fail;
+
+}
+``` 
 
