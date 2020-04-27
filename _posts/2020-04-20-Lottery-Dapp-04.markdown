@@ -187,3 +187,130 @@ describe.only('isMatch', function () {
 lottery.test.js 파일 다시 테스트 ( truffle test test/lottery.test.js 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_48.png" width="75%" height="45%" >  
 =>> isMatch 함수에 대한 테스트 완료  
+
+
+
+<br/>
+* * *
+<br/>
+<h3>< Lottery Distribute 함수 구현 ></h3> 
+
+<br/>
+스마트 컨트랙트 안에서 이더르 전송하는 3가지 방법
+**매우 조심해서 사용**    
+1. call : 이더전송 + 다른 스마트컨트랙트의 특정 함수 호출 -> 함수호출시 같이 이더 전송 가능 
+-> 외부의 스마트 컨트랙트 함부로 호출시 매우 위험  
+2. send : 돈을 보내도 False 값 리턴   
+3. transfer : 가장 많이 사용, 이더 던지기 실패시 스마트 컨트랙트 트랜잭션 자체 Fail시킴 -> 가장 안전     
+
+  
+<br/>
+Lottey.sol 파일 수정 ( transferAfterPayingFee 함수, setAnswerForTest 함수, getAnswerBlockHash 함수, event들 추가, Distribute 함수 완성 )  
+```
+event WIN(uint256 index, address bettor, uint256 amount, byte challenges, byte answer, uint256 answerBlockNumber);
+event FAIL(uint256 index, address bettor, uint256 amount, byte challenges, byte answer, uint256 answerBlockNumber);
+event DRAW(uint256 index, address bettor, uint256 amount, byte challenges, byte answer, uint256 answerBlockNumber);
+event REFUND(uint256 index, address bettor, uint256 amount, byte challenges, uint256 answerBlockNumber);
+    
+address payable public owner; // -> 기존에 있던 변수에 payable 추가 
+bytes32 public answerForTest;
+bool private mode = false; // false : use answer for test ( 테스트모드 ), true : use real block hash ( real모드 )
+    // 랜덤값 생성시에는 이에대한 테스트가 어려움 -> 임시정답 세팅 후 모드를 바꿔주며 ( ex - 테스트형 모드, 배포형 모드 ) 테스트
+
+// 수수료 떼가는 함수 - 일정량의 수수료 스마트컨트랙트 owner에게 줌
+function transferAfterPayingFee(address payable addr, uint256 amount) internal returns (uint256) { 
+        
+    // uint256 fee = amount / 100; //1퍼센트를 수수료로 
+    uint256 fee = 0; // 테스트시에는 0으로 지정하여 테스트 
+    uint256 amountWithoutFee = amount - fee;
+    
+    // transfer to addr
+    addr.transfer(amountWithoutFee);
+    
+    // transfer to owner
+    owner.transfer(fee);
+
+     return amountWithoutFee;
+}
+
+function setAnswerForTest(bytes32 answer) public returns (bool result) {
+    require(msg.sender == owner, "Only owner can set the answer for test mode");
+    answerForTest = answer;
+    return true;
+}
+    
+function getAnswerBlockHash(uint256 answerBlockNumber) internal view returns (bytes32 answer) {
+    return mode ? blockhash(answerBlockNumber) : answerForTest;
+}
+
+/**
+* @dev 베팅 결과값을 확인 하고 팟머니를 분배한다.
+* 정답 실패 : 팟머니 축척, 정답 맞춤 : 팟머니 획득, 한글자 맞춤 or 정답 확인 불가 : 베팅 금액만 획득
+*/
+function distribute() public {
+    // head 3 4 5 6 7 8 9 10 11 12 tail // 큐 - 새로운 정보는 tail방향 부터 추가
+    uint256 cur; // head 부터 tail 방향으로 도는 루프
+    uint256 transferAmount;
+
+    BetInfo memory b;
+    BlockStatus currentBlockStatus; // 현재 BlockStatus
+    BettingResult currentBettingResult;
+
+    for(cur=_head;cur<_tail;cur++) {
+        b = _bets[cur]; // 베팅 info 불러옴
+        currentBlockStatus = getBlockStatus(b.answerBlockNumber);
+        // Checkable : block.number > AnswerBlockNumber && block.number  <  BLOCK_LIMIT + AnswerBlockNumber 1 
+        // 정답을 체크할 수 있는 상태
+        if(currentBlockStatus == BlockStatus.Checkable) {
+            bytes32 answerBlockHash = getAnswerBlockHash(b.answerBlockNumber);
+            currentBettingResult = isMatch(b.challenges, answerBlockHash);
+            // if win, bettor gets pot
+            if(currentBettingResult == BettingResult.Win) {
+                // transfer pot //팟머니 옮겨줌
+                transferAmount = transferAfterPayingFee(b.bettor, _pot + BET_AMOUNT);
+                // pot = 0 
+                _pot = 0;
+                 // emit WIN
+                 emit WIN(cur, b.bettor, transferAmount, b.challenges, answerBlockHash[0], b.answerBlockNumber);
+            }
+            // if fail, bettor's money goes pot
+            if(currentBettingResult == BettingResult.Fail) {
+                // pot = pot + BET_AMOUNT // 팟머니에 베팅한 amount 만큼 더해줌
+                _pot += BET_AMOUNT;
+                // emit FAIL
+                emit FAIL(cur, b.bettor, 0, b.challenges, answerBlockHash[0], b.answerBlockNumber);
+            }                
+            // if draw, refund bettor's money 
+            if(currentBettingResult == BettingResult.Draw) {
+                // transfer only BET_AMOUNT // 베팅한 돈만큼만 돌려줌 
+                transferAmount = transferAfterPayingFee(b.bettor, BET_AMOUNT);
+                // emit DRAW
+                emit DRAW(cur, b.bettor, transferAmount, b.challenges, answerBlockHash[0], b.answerBlockNumber);
+            }
+         }
+         // Not Revealed : block.number <= AnswerBlockNumber 2 // 블락이 마이닝 되지 않은 상태
+         if(currentBlockStatus == BlockStatus.NotRevealed) {
+             break;
+         }
+         // Block Limit Passed : block.number >= AnswerBlockNumber + BLOCK_LIMIT 3 // 블락이 제한이 지났을 때
+         if(currentBlockStatus == BlockStatus.BlockLimitPassed) {
+             // refund
+             transferAmount = transferAfterPayingFee(b.bettor, BET_AMOUNT);
+             // emit refund
+             emit REFUND(cur, b.bettor, transferAmount, b.challenges, b.answerBlockNumber);
+        }
+
+        popBet(cur);
+    }
+    _head = cur;
+}
+```
+  
+<br/>
+컴파일 ( truffle compile 명령어 사용 )  
+<img src="/assets/imgs/Lottery&Dapp_49.png" width="75%" height="45%" >  
+  
+  
+  
+  
+  
