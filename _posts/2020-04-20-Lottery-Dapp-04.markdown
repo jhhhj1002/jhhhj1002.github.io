@@ -196,16 +196,17 @@ lottery.test.js 파일 다시 테스트 ( truffle test test/lottery.test.js 명�
 <h3>< Lottery Distribute 함수 구현 ></h3> 
 
 <br/>
-스마트 컨트랙트 안에서 이더르 전송하는 3가지 방법
+스마트 컨트랙트 안에서 이더를 전송하는 3가지 방법  
 **매우 조심해서 사용**    
-1. call : 이더전송 + 다른 스마트컨트랙트의 특정 함수 호출 -> 함수호출시 같이 이더 전송 가능 
+1. call : 이더전송 + 다른 스마트컨트랙트의 특정 함수 호출 -> 함수호출시 같이 이더 전송 가능  
 -> 외부의 스마트 컨트랙트 함부로 호출시 매우 위험  
 2. send : 돈을 보내도 False 값 리턴   
 3. transfer : 가장 많이 사용, 이더 던지기 실패시 스마트 컨트랙트 트랜잭션 자체 Fail시킴 -> 가장 안전     
 
   
 <br/>
-Lottey.sol 파일 수정 ( transferAfterPayingFee 함수, setAnswerForTest 함수, getAnswerBlockHash 함수, event들 추가, Distribute 함수 완성 )  
+Lottey.sol 파일 수정  
+( transferAfterPayingFee 함수, setAnswerForTest 함수, getAnswerBlockHash 함수, event들 추가, Distribute 함수 완성 )  
 ```
 event WIN(uint256 index, address bettor, uint256 amount, byte challenges, byte answer, uint256 answerBlockNumber);
 event FAIL(uint256 index, address bettor, uint256 amount, byte challenges, byte answer, uint256 answerBlockNumber);
