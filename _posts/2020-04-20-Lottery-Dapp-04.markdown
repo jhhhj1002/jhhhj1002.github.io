@@ -311,7 +311,13 @@ function distribute() public {
 컴파일 ( truffle compile 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_49.png" width="75%" height="45%" >  
   
+
+<br/>
+* * *
+<br/>
+<h3>< Lottery Distribute 함수 테스트 ></h3> 
   
-  
-  
-  
+<br/>
+Lottey.sol 파일 수정     
+```  
+``` 
