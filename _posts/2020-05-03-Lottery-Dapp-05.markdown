@@ -334,6 +334,34 @@ bet = async () => {
 }
 ```
 
+<br/>
+* * *
+<br/>
+<h3>< web3js - filter ></h3> 
+  
+<br/>
+src 폴더 아래 App.js 파일 수정 ( bet 함수 추가 )  
+```
+async componentDidMount() {
+  await this.initWeb3();
+  await this.getBetEvents(); // getBetEvents 호출
+}
+
+getBetEvents = async () => {
+  const records = [];
+  let events = await this.lotteryContract.getPastEvents('BET', {fromBlock:0, toBlock:'latest'});
+  console.log(events);
+}
+```
+
+Chrome 새로고침 후, Chrome 콘솔에서 event 확인 가능  
+<img src="/assets/imgs/Lottery&Dapp_94.png" width="75%" height="45%" >  
+-> bet함수를 얼마나 찍었냐에 따라서 개수가 달라짐  
++ address : 스마트 컨트랙트 address  
++ blockHash : 어떤 block 에 들어갔는지  
++ returnValues : raw 값 해석한것 ( raw 와 동일 )  
+
+
 
 
 
