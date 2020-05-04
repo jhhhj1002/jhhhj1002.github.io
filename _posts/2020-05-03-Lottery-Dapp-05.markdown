@@ -362,8 +362,23 @@ Chrome 새로고침 후, Chrome 콘솔에서 event 확인 가능
 + returnValues : raw 값 해석한것 ( raw 와 동일 )  
 
 
-
-
+<br/>
+* * *
+<br/>
+<h3>< Dapp 데이터 관리 ></h3> 
+  
+<br/>
++ <h4>Dapp 에서의 데이터 관리 - Read</h4>     
+1. Smart Contract를 직접 Call ( ex - getPot() ), batch read call  
+   : 속도가 느림     
+2. event log를 읽는 방법 : 속도가 빠름  
+   a. http ( polling )  
+   b. web socket  
+     1. init과 동시에 past event들으 가져온다  
+     2. web socket으로 geth 나 infura에 연결한다  
+     3. web socket으로 원하느 event를 subscribe 한다  
+     ! web socket 을 사용할 수 없으면 롱 폴링을 이용한다  
+     ! 돈이크게 걸려있는 서비스 -> 블락 컨펌 확인  
 
 
 
