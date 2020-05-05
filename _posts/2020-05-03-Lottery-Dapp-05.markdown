@@ -135,15 +135,18 @@ export default App;
 + 이더리움 메타마스크 연결 참고 : https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8  
 -> initWeb3 에 코드 사용  
 
+<br/>
 lottery-react-web으로 이동하여 yarn start  
-<img src="/assets/imgs/Lottery&Dapp_69.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_70.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_71.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_69.png" width="65%" height="40%" >  
+<img src="/assets/imgs/Lottery&Dapp_70.png" width="40%" height="35%" >  
+<img src="/assets/imgs/Lottery&Dapp_71.png" width="40%" height="30%" >  
 <img src="/assets/imgs/Lottery&Dapp_72.png" width="75%" height="45%" >  
 
+<br/>
 크롬 검사창 console에서 'Recent mode' 출려 확인 가능  
 <img src="/assets/imgs/Lottery&Dapp_73.png" width="75%" height="45%" >  
 
+<br/>
 src 폴더 아래 App.js 파일 수정하여 연결된 계정 확인   
 ```
 async componentDidMount() {
