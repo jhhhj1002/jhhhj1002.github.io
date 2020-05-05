@@ -132,7 +132,7 @@ class App extends Component {
 export default App;
 ```
 
-+ 이더리움 메타마스크 연결 참고 : https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8  
++ 이더리움 메타마스크 연결 참고 : [ Breaking Change: No Accounts Exposed by Default ](https://medium.com/metamask/https-medium-com-metamask-breaking-change-injecting-web3-7722797916a8)  
 -> initWeb3 에 코드 사용  
 
 <br/>
@@ -258,7 +258,7 @@ initWeb3 = async () => {
   }
 ```
 
-+ ABI line brak 사이트 : https://www.textfixer.com/tools/remove-line-breaks.php
++ ABI [ line brak 사이트 ](https://www.textfixer.com/tools/remove-line-breaks.php)
 
 + call : 스마트 컨트랙트의 상태를 변화시키지 않는, 블럭체인의 실제 트랜잭션으로 만들어 지지 않는, 값만 읽어오는 것들  
 + send, invoke : 스마트 컨트랙트에 있느 값을 변화시키거나, 블럭체인의 새로운 트랜잭션을 통해 상호작용을 하는 것들 
@@ -341,12 +341,12 @@ Chrome 새로고침 후, 계약 승인 선택시 트랜잭션 발생
 
 <br/>
 트러플 콘솔창에서 인덱스 확인 ( getBetInfo(index) 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_92.png" width="50%" height="35%" >   
+<img src="/assets/imgs/Lottery&Dapp_92.png" width="40%" height="30%" >   
 -> 5번에 '0xcd' 들어있음 확인  
 
 <br/>
 더 진행되지 않은 값들은 '0x00'으로 초기화 되어있음  
-<img src="/assets/imgs/Lottery&Dapp_93.png" width="50%" height="35%" >   
+<img src="/assets/imgs/Lottery&Dapp_93.png" width="40%" height="30%" >   
 
 <br/>
 src 폴더 아래 App.js 파일 수정 ( bet 함수 추가 )  
