@@ -169,16 +169,17 @@ async componentDidMount() {
 
 <br/>
 트러플 콘솔에 접근하여 Accounts 확인  
-<img src="/assets/imgs/Lottery&Dapp_76.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_76.png" width="45%" height="25%" >  
 
-
+<br/>
 메타마스크 로컬호스트 8545 계정을 10이더 전송  
-<img src="/assets/imgs/Lottery&Dapp_77.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_78.png" width="75%" height="45%" > 
+<img src="/assets/imgs/Lottery&Dapp_77.png" width="45%" height="25%" >  
+<img src="/assets/imgs/Lottery&Dapp_78.png" width="90%" height="55%" >  
 -> status = true 로 트랜잭션 성공 확인 가능  
 
+<br/>
 10이더 전송 확인  
-<img src="/assets/imgs/Lottery&Dapp_79.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_79.png" width="35%" height="30%" >  
 
 **ganache-cli의 private key 를 Metamask에 import하여 사용할 수도 있음**.  
 
