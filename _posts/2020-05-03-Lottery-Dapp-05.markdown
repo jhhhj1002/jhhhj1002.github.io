@@ -39,17 +39,17 @@ lottery-react-web으로 이동하여 yarn start
 
 -------------------------------------------------------------------------------------------//yarn  
 Create React app 설치 ( yarn global add create-react-app 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_61.png" width="75%" height="45%" > 
+<img src="/assets/imgs/Lottery&Dapp_61.png" width="65%" height="40%" > 
 
 <br/>
 lottery-react-web 이라는 이름의 react app 생성 ( create-react-app lottery-react-web 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_62.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_63.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_64.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_62.png" width="90%" height="55%" >  
+<img src="/assets/imgs/Lottery&Dapp_63.png" width="90%" height="55%" >  
+<img src="/assets/imgs/Lottery&Dapp_64.png" width="90%" height="55%" >  
 
 <br/>
 lottery-react-web 이 생성된것 확인  
-<img src="/assets/imgs/Lottery&Dapp_57.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_57.png" width="50%" height="40%" >  
 
 <br/>
 lottery-react-web으로 이동하여 yarn start  
@@ -62,7 +62,7 @@ lottery-react-web으로 이동하여 yarn start
 
 <br/>
 web3 설치 ( yarn add web3 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_67.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_67.png" width="40%" height="35%" >  
 <img src="/assets/imgs/Lottery&Dapp_68.png" width="75%" height="45%" >  
 
 
