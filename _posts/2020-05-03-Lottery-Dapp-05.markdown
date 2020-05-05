@@ -19,18 +19,22 @@ categories: Ethereum Dapp Truffle
 Create React app 설치 ( npm -g install create-react-app 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_54.png" width="75%" height="45%" >  
 
+<br/>
 lottery-react-web 이라는 이름의 react app 생성 ( create-react-app lottery-react-web 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_55.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_55.png" width="90%" height="45%" >  
 <img src="/assets/imgs/Lottery&Dapp_56.png" width="75%" height="45%" >  
 
+<br/>
 lottery-react-web 이 생성된것 확인  
-<img src="/assets/imgs/Lottery&Dapp_57.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_57.png" width="55%" height="45%" >  
 
+<br/>
 lottery-react-web으로 이동하여 yarn start  
-<img src="/assets/imgs/Lottery&Dapp_58.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_58.png" width="60%" height="45%" >  
 
+<br/>
 리액트 기본페이지 출력됨  
-<img src="/assets/imgs/Lottery&Dapp_59.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_59.png" width="45%" height="40%" >  
 <img src="/assets/imgs/Lottery&Dapp_60.png" width="75%" height="45%" >  
 -------------------------------------------------------------------------------------------//npm  
 
