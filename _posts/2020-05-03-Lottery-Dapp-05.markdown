@@ -181,9 +181,10 @@ async componentDidMount() {
 10이더 전송 확인  
 <img src="/assets/imgs/Lottery&Dapp_79.png" width="35%" height="30%" >  
 
+<br/>
 **ganache-cli의 private key 를 Metamask에 import하여 사용할 수도 있음**.  
 
-
+<br/>
 src 폴더 아래 App.js 파일 수정 ( balance 가지고오는 코드추가 )  
 ```
 async componentDidMount() {
@@ -196,8 +197,9 @@ async componentDidMount() {
 }
 ```
 
+<br/>
 새로고침하여 Chrome 콘솔에서 balance 10이더 확인 가능  
-<img src="/assets/imgs/Lottery&Dapp_80.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_80.png" width="85%" height="55%" >  
 
 
 <br/>
