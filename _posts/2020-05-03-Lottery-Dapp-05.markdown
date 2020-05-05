@@ -137,7 +137,7 @@ export default App;
 
 <br/>
 lottery-react-web으로 이동하여 yarn start  
-<img src="/assets/imgs/Lottery&Dapp_69.png" width="65%" height="40%" >  
+<img src="/assets/imgs/Lottery&Dapp_69.png" width="55%" height="35%" >  
 <img src="/assets/imgs/Lottery&Dapp_70.png" width="40%" height="35%" >  
 <img src="/assets/imgs/Lottery&Dapp_71.png" width="35%" height="30%" >  
 <img src="/assets/imgs/Lottery&Dapp_72.png" width="75%" height="45%" >  
@@ -341,12 +341,12 @@ Chrome 새로고침 후, 계약 승인 선택시 트랜잭션 발생
 
 <br/>
 트러플 콘솔창에서 인덱스 확인 ( getBetInfo(index) 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_92.png" width="60%" height="40%" >   
+<img src="/assets/imgs/Lottery&Dapp_92.png" width="50%" height="35%" >   
 -> 5번에 '0xcd' 들어있음 확인  
 
 <br/>
 더 진행되지 않은 값들은 '0x00'으로 초기화 되어있음  
-<img src="/assets/imgs/Lottery&Dapp_93.png" width="60%" height="40%" >   
+<img src="/assets/imgs/Lottery&Dapp_93.png" width="50%" height="35%" >   
 
 <br/>
 src 폴더 아래 App.js 파일 수정 ( bet 함수 추가 )  
