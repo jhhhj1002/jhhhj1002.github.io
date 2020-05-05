@@ -21,12 +21,12 @@ Create React app 설치 ( npm -g install create-react-app 명령어 사용 )
 
 <br/>
 lottery-react-web 이라는 이름의 react app 생성 ( create-react-app lottery-react-web 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_55.png" width="90%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_55.png" width="95%" height="55%" >  
 <img src="/assets/imgs/Lottery&Dapp_56.png" width="75%" height="45%" >  
 
 <br/>
 lottery-react-web 이 생성된것 확인  
-<img src="/assets/imgs/Lottery&Dapp_57.png" width="55%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_57.png" width="50%" height="40%" >  
 
 <br/>
 lottery-react-web으로 이동하여 yarn start  
@@ -34,35 +34,39 @@ lottery-react-web으로 이동하여 yarn start
 
 <br/>
 리액트 기본페이지 출력됨  
-<img src="/assets/imgs/Lottery&Dapp_59.png" width="45%" height="40%" >  
+<img src="/assets/imgs/Lottery&Dapp_59.png" width="40%" height="35%" >  
 <img src="/assets/imgs/Lottery&Dapp_60.png" width="75%" height="45%" >  
--------------------------------------------------------------------------------------------//npm  
 
 -------------------------------------------------------------------------------------------//yarn  
 Create React app 설치 ( yarn global add create-react-app 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_61.png" width="75%" height="45%" > 
 
+<br/>
 lottery-react-web 이라는 이름의 react app 생성 ( create-react-app lottery-react-web 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_62.png" width="75%" height="45%" >  
 <img src="/assets/imgs/Lottery&Dapp_63.png" width="75%" height="45%" >  
 <img src="/assets/imgs/Lottery&Dapp_64.png" width="75%" height="45%" >  
 
+<br/>
 lottery-react-web 이 생성된것 확인  
 <img src="/assets/imgs/Lottery&Dapp_57.png" width="75%" height="45%" >  
 
+<br/>
 lottery-react-web으로 이동하여 yarn start  
 <img src="/assets/imgs/Lottery&Dapp_65.png" width="75%" height="45%" >  
 
+<br/>
 리액트 기본페이지 출력됨  
 <img src="/assets/imgs/Lottery&Dapp_66.png" width="75%" height="45%" >  
 <img src="/assets/imgs/Lottery&Dapp_60.png" width="75%" height="45%" >  
 
+<br/>
 web3 설치 ( yarn add web3 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_67.png" width="75%" height="45%" >  
 <img src="/assets/imgs/Lottery&Dapp_68.png" width="75%" height="45%" >  
 
-**본 강의에서는 클래스형 컴포넌트 방식사용, 본인은 함수형 컴포넌트 방식 사용**
 
+<br/>
 src 폴더 아래 App.js 파일 수정  
 ```
 import React, { Component } from 'react';
