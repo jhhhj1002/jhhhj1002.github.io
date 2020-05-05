@@ -169,11 +169,11 @@ async componentDidMount() {
 
 <br/>
 트러플 콘솔에 접근하여 Accounts 확인  
-<img src="/assets/imgs/Lottery&Dapp_76.png" width="45%" height="25%" >  
+<img src="/assets/imgs/Lottery&Dapp_76.png" width="60%" height="40%" >  
 
 <br/>
 메타마스크 로컬호스트 8545 계정을 10이더 전송  
-<img src="/assets/imgs/Lottery&Dapp_77.png" width="45%" height="25%" >  
+<img src="/assets/imgs/Lottery&Dapp_77.png" width="60%" height="40%" >  
 <img src="/assets/imgs/Lottery&Dapp_78.png" width="90%" height="55%" >  
 -> status = true 로 트랜잭션 성공 확인 가능  
 
@@ -209,9 +209,10 @@ async componentDidMount() {
   
 <br/>
 스마트 컨트랙트 재배포 ( truffle migrate --reset 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_81.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_82.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_81.png" width="65%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_82.png" width="65%" height="45%" >  
 
+<br/>
 src 폴더 아래 App.js 파일 수정  
 ```
 let lotteryAddress = '0x9Cf1A3C561D45b3f689cC2e109cc21bb04644948'; // 배포된 deploy_smart_contract.js의 contract address 사용 
@@ -263,28 +264,33 @@ initWeb3 = async () => {
 + send, invoke : 스마트 컨트랙트에 있느 값을 변화시키거나, 블럭체인의 새로운 트랜잭션을 통해 상호작용을 하는 것들 
 
 
+<br/>
 새로고침하여 Chrome 콘솔에서 확인  
-<img src="/assets/imgs/Lottery&Dapp_83.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_83.png" width="85%" height="55%" >  
 -> 아직 배팅한 사람이 없으니 pot은 0, ganache-cli의 0번째 account 확인 가능  
 
+<br/>
 트러플 콘솔에 들어가서 콘솔에서도 상호작용 할수있게 준비  
-<img src="/assets/imgs/Lottery&Dapp_84.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_84.png" width="60%" height="45%" >  
 lt 입력시 출력되는 뒷부분 너무 길어서 캡쳐 생략  
 -> 변수 lt를 사용하여 상호작용 가능  
 
 
+<br/>
 Accounts 가지고 와서, 첫번째 계정에 대하여 betAndDistribute 함수 사용  
-<img src="/assets/imgs/Lottery&Dapp_85.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_86.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_85.png" width="60%" height="40%" >  
+<img src="/assets/imgs/Lottery&Dapp_86.png" width="70%" height="45%" >  
 
-
+<br/>
 betAndDistribute 함수 여러번 호출 -> event : 'FAIL' 확인 ( FAIL이 되어야 팟머니에 들어감 )  
 <img src="/assets/imgs/Lottery&Dapp_87.png" width="75%" height="45%" >  
 <img src="/assets/imgs/Lottery&Dapp_88.png" width="75%" height="45%" >  
 
+<br/>
 새로고침하여 Chrome 콘솔에서 팟머니 증가 확인  
-<img src="/assets/imgs/Lottery&Dapp_89.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_89.png" width="85%" height="55%" >  
 
+<br/>
 src 폴더 아래 App.js 파일 수정 ( 배팅 트랜잭션 추가 )  
 ```
 initWeb3 = async () => {
@@ -328,18 +334,21 @@ initWeb3 = async () => {
 }
 ```
 
+<br/>
 Chrome 새로고침 후, 계약 승인 선택시 트랜잭션 발생  
-<img src="/assets/imgs/Lottery&Dapp_90.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_91.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_90.png" width="35%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_91.png" width="35%" height="30%" >  
 
+<br/>
 트러플 콘솔창에서 인덱스 확인 ( getBetInfo(index) 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_92.png" width="75%" height="45%" >   
+<img src="/assets/imgs/Lottery&Dapp_92.png" width="60%" height="40%" >   
 -> 5번에 '0xcd' 들어있음 확인  
 
+<br/>
 더 진행되지 않은 값들은 '0x00'으로 초기화 되어있음  
-<img src="/assets/imgs/Lottery&Dapp_93.png" width="75%" height="45%" >   
+<img src="/assets/imgs/Lottery&Dapp_93.png" width="60%" height="40%" >   
 
-
+<br/>
 src 폴더 아래 App.js 파일 수정 ( bet 함수 추가 )  
 ```
 bet = async () => {
@@ -370,6 +379,7 @@ getBetEvents = async () => {
 }
 ```
 
+<br/>
 Chrome 새로고침 후, Chrome 콘솔에서 event 확인 가능  
 <img src="/assets/imgs/Lottery&Dapp_94.png" width="75%" height="45%" >  
 -> bet함수를 얼마나 찍었냐에 따라서 개수가 달라짐  
@@ -390,11 +400,11 @@ Chrome 새로고침 후, Chrome 콘솔에서 event 확인 가능
 2. event log를 읽는 방법 : 속도가 빠름  
    a. http ( polling )  
    b. web socket  
-     1. init과 동시에 past event들으 가져온다  
-     2. web socket으로 geth 나 infura에 연결한다  
-     3. web socket으로 원하느 event를 subscribe 한다  
-     ! web socket 을 사용할 수 없으면 롱 폴링을 이용한다  
-     ! 돈이크게 걸려있는 서비스 -> 블락 컨펌 확인  
+       1. init과 동시에 past event들으 가져온다  
+       2. web socket으로 geth 나 infura에 연결한다  
+       3. web socket으로 원하느 event를 subscribe 한다  
+       ! web socket 을 사용할 수 없으면 롱 폴링을 이용한다  
+       ! 돈이크게 걸려있는 서비스 -> 블락 컨펌 확인  
 
 
 
