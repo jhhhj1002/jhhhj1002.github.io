@@ -62,8 +62,8 @@ lottery-react-web으로 이동하여 yarn start
 
 <br/>
 web3 설치 ( yarn add web3 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_67.png" width="75%" height="45%" >  
-<img src="/assets/imgs/Lottery&Dapp_68.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_67.png" width="90%" height="55%" >  
+<img src="/assets/imgs/Lottery&Dapp_68.png" width="90%" height="55%" >  
 
 
 <br/>
@@ -139,12 +139,12 @@ export default App;
 lottery-react-web으로 이동하여 yarn start  
 <img src="/assets/imgs/Lottery&Dapp_69.png" width="65%" height="40%" >  
 <img src="/assets/imgs/Lottery&Dapp_70.png" width="40%" height="35%" >  
-<img src="/assets/imgs/Lottery&Dapp_71.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_71.png" width="35%" height="30%" >  
 <img src="/assets/imgs/Lottery&Dapp_72.png" width="75%" height="45%" >  
 
 <br/>
-크롬 검사창 console에서 'Recent mode' 출려 확인 가능  
-<img src="/assets/imgs/Lottery&Dapp_73.png" width="75%" height="45%" >  
+크롬 검사창 console에서 'Recent mode' 출력 확인 가능  
+<img src="/assets/imgs/Lottery&Dapp_73.png" width="85%" height="55%" >  
 
 <br/>
 src 폴더 아래 App.js 파일 수정하여 연결된 계정 확인   
@@ -157,15 +157,17 @@ async componentDidMount() {
 }
 ```
 
+<br/>
 크롬 검사창 console에서 web3객체와 메타마스크 주소 확인가능   
 <img src="/assets/imgs/Lottery&Dapp_74.png" width="75%" height="45%" >  
 
-
 -> ganache-cli 와 함께 사용하고 있으므로 ganache-cli와 연결
 
+<br/>
 메타마스크르 로컬호스트 8545와 연결 -> 로컬호스트 8545로 ganache-cli와 연결  
-<img src="/assets/imgs/Lottery&Dapp_75.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_75.png" width="35%" height="30%" >  
 
+<br/>
 트러플 콘솔에 접근하여 Accounts 확인  
 <img src="/assets/imgs/Lottery&Dapp_76.png" width="75%" height="45%" >  
 
