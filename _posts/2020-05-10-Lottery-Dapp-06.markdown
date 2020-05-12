@@ -14,7 +14,7 @@ categories: React Ethereum Dapp Truffle
 
 <br/>
 bootstrap library 추가 ( yarn add bootstrap 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_95.png" width="90%" height="55%" >   
+<img src="/assets/imgs/Lottery&Dapp_95.png" width="90%" height="65%" >   
 
 <br/>
 src 폴더 아래 index.js 파일 수정    
