@@ -14,7 +14,7 @@ categories: React Ethereum Dapp Truffle
 
 <br/>
 bootstrap library 추가 ( yarn add bootstrap 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_95.png" width="75%" height="45%" >   
+<img src="/assets/imgs/Lottery&Dapp_95.png" width="90%" height="55%" >   
 
 <br/>
 src 폴더 아래 index.js 파일 수정    
@@ -57,7 +57,7 @@ render() {
 chrome 에서 bootstrap 적용 확인 ( yarn start 명령어 사용 )  
 <img src="/assets/imgs/Lottery&Dapp_96.png" width="75%" height="45%" >  
 
-+ bootstrap4의 jumbotron 테마 활용 : https://www.w3schools.com/bootstrap4/bootstrap_jumbotron.asp  
++ bootstrap4의 jumbotron 테마 활용 : [https://www.w3schools.com/bootstrap4/bootstrap_jumbotron.asp](https://www.w3schools.com/bootstrap4/bootstrap_jumbotron.asp)  
 
 
 <br/>
@@ -164,7 +164,7 @@ render() {
   }
 }
 ```
-+ bootstrap4 card 사용 : https://www.w3schools.com/bootstrap4/bootstrap_cards.asp  
++ bootstrap4 card 사용 : [https://www.w3schools.com/bootstrap4/bootstrap_cards.asp](https://www.w3schools.com/bootstrap4/bootstrap_cards.asp)  
 
 
 <br/>
@@ -202,7 +202,7 @@ getCard = (_Character, _cardStyle) => {
   )
 }
 ```
-+ card deck 사용 : https://en.wikipedia.org/wiki/Standard_52-card_deck 
++ card deck 사용 : [https://en.wikipedia.org/wiki/Standard_52-card_deck](https://en.wikipedia.org/wiki/Standard_52-card_deck) 
 
 <br/>
 Chrome 새로고침 후, 변경사항 확인     
@@ -388,7 +388,7 @@ getCard = (_Character, _cardStyle) => {
 
 <br/>
 Chrome 새로고침 후, console에서 Bet클릭 이후의 트랜잭션 해쉬 값 확인            
-<img src="/assets/imgs/Lottery&Dapp_106.png" width="75%" height="45%" >  
+<img src="/assets/imgs/Lottery&Dapp_106.png" width="90%" height="55%" >  
 
 
 <br/>
