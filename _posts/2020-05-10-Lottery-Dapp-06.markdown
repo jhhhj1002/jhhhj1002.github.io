@@ -12,8 +12,9 @@ categories: React Ethereum Dapp Truffle
 
 <h3>< Lottery UI 개발 ></h3>  
 
+<br/>
 bootstrap library 추가 ( yarn add bootstrap 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_95.png" width="40%" height="30%" >   
+<img src="/assets/imgs/Lottery&Dapp_95.png" width="75%" height="45%" >   
 
 <br/>
 src 폴더 아래 index.js 파일 수정    
@@ -52,8 +53,9 @@ render() {
 }
 ```
 
+<br/>
 chrome 에서 bootstrap 적용 확인 ( yarn start 명령어 사용 )  
-<img src="/assets/imgs/Lottery&Dapp_96.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_96.png" width="75%" height="45%" >  
 
 + bootstrap4의 jumbotron 테마 활용 : https://www.w3schools.com/bootstrap4/bootstrap_jumbotron.asp  
 
@@ -113,8 +115,9 @@ render() {
 }
 ```
 
+<br/>
 Chrome 새로고침 후, 변경사항 확인  
-<img src="/assets/imgs/Lottery&Dapp_97.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_97.png" width="75%" height="45%" >  
 
 <br/>
 src 폴더 아래 App.js 파일 수정 ( getCard 추가, render 수정 )      
@@ -164,8 +167,9 @@ render() {
 + bootstrap4 card 사용 : https://www.w3schools.com/bootstrap4/bootstrap_cards.asp  
 
 
+<br/>
 Chrome 새로고침 후, 변경사항 확인 -> 4가지의 Card view 확인 가능   
-<img src="/assets/imgs/Lottery&Dapp_98.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_98.png" width="75%" height="45%" >  
 
 
 
@@ -200,8 +204,9 @@ getCard = (_Character, _cardStyle) => {
 ```
 + card deck 사용 : https://en.wikipedia.org/wiki/Standard_52-card_deck 
 
+<br/>
 Chrome 새로고침 후, 변경사항 확인     
-<img src="/assets/imgs/Lottery&Dapp_99.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_99.png" width="75%" height="45%" >  
 
 <br/>
 src 폴더 아래 App.js 파일 수정 ( render 수정 )      
@@ -271,8 +276,9 @@ render() {
 }
 ```
 
+<br/>
 Chrome 새로고침 후, 변경사항 확인 -> Bet버튼 생성, table 생성        
-<img src="/assets/imgs/Lottery&Dapp_100.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_100.png" width="75%" height="45%" >  
 
 
 
@@ -297,8 +303,9 @@ getPot = async () => {
 }
 ```
 
+<br/>
 Chrome 새로고침 후, 변경사항 확인 -> 실시간 팟머니 출력          
-<img src="/assets/imgs/Lottery&Dapp_101.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_101.png" width="75%" height="45%" >  
 
 <br/>
 src 폴더 아래 App.js 파일 수정 ( componentDidMount 수정, pollData 추가, bet 함수 수정, render 수정 )      
@@ -332,15 +339,16 @@ render() {
 ```
 
 
+<br/>
 Chrome 새로고침 후, Bet 버튼 클릭시 상호작용 확인
 - Bet 버튼 클릭 전 Metamask 이더 확인  
-<img src="/assets/imgs/Lottery&Dapp_102.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_102.png" width="35%" height="30%" >  
 - Bet 버튼 클릭후 승인 선택  
-<img src="/assets/imgs/Lottery&Dapp_103.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_103.png" width="35%" height="30%" >  
 - 계약 이후 Metamask 이더 확인  
-<img src="/assets/imgs/Lottery&Dapp_104.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_104.png" width="35%" height="30%" >  
 - Chrome 창에서 실시가 팟머니 확인  
-<img src="/assets/imgs/Lottery&Dapp_105.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_105.png" width="75%" height="45%" >  
 
 
 <br/>
@@ -378,8 +386,9 @@ getCard = (_Character, _cardStyle) => {
 }
 ```
 
+<br/>
 Chrome 새로고침 후, console에서 Bet클릭 이후의 트랜잭션 해쉬 값 확인            
-<img src="/assets/imgs/Lottery&Dapp_106.png" width="40%" height="30%" >  
+<img src="/assets/imgs/Lottery&Dapp_106.png" width="75%" height="45%" >  
 
 
 <br/>
@@ -486,8 +495,9 @@ render() {
 }
 ```
 
-Chrome 새로고침 후, history 테이블 출려 확인  
-<img src="/assets/imgs/Lottery&Dapp_107.png" width="40%" height="30%" >  
+<br/>
+Chrome 새로고침 후, history 테이블 출력 확인  
+<img src="/assets/imgs/Lottery&Dapp_107.png" width="75%" height="45%" >  
 
 
 
